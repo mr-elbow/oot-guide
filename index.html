@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Legend of Zelda: Ocarina of Time — Full Walkthrough for Kids | 100% Guide</title>
+<meta name="description" content="A complete Ocarina of Time walkthrough written for kids: every dungeon, every Heart Piece, all 100 Gold Skulltulas, and the final boss. Nintendo Switch 2 remake.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #e60012; --yellow: #ffcf00; --blue: #1b4fd8; --green: #0a8a2f;
+    --ink: #141414; --paper: #fff8e6; --card: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Nunito", system-ui, sans-serif; font-size: 18px; line-height: 1.6; }
+  h1, h2, h3, .pixel { font-family: "Press Start 2P", monospace; line-height: 1.5; }
+  h1 { font-size: clamp(20px, 4.5vw, 34px); }
+  h2 { font-size: clamp(15px, 3.4vw, 22px); color: var(--red); margin: 0 0 10px; text-shadow: 2px 2px 0 var(--yellow); }
+  h3 { font-size: clamp(12px, 2.6vw, 16px); color: var(--blue); margin: 22px 0 8px; }
+  p { margin: 8px 0; }
+  a { color: var(--blue); }
+  img { max-width: 100%; height: auto; display: block; border: 3px solid var(--ink); border-radius: 6px; }
+
+  /* ===== Top bar ===== */
+  .topbar { position: sticky; top: 0; z-index: 60; background: var(--red); color: #fff; border-bottom: 4px solid var(--ink); display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+  .menu-btn { background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); border-radius: 8px; font-family: "Press Start 2P", monospace; font-size: 13px; padding: 10px 12px; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); }
+  .menu-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+  .topbar .title { font-family: "Press Start 2P", monospace; font-size: clamp(11px, 2.6vw, 16px); line-height: 1.4; }
+  .topbar .sub { font-size: 12px; font-weight: 800; opacity: .9; }
+
+  /* ===== Slide-out nav ===== */
+  .overlay { position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 70; opacity: 0; pointer-events: none; transition: opacity .2s; }
+  .overlay.show { opacity: 1; pointer-events: auto; }
+  nav.drawer { position: fixed; top: 0; left: 0; bottom: 0; width: min(320px, 88vw); background: #fff; border-right: 4px solid var(--ink); z-index: 80; transform: translateX(-105%); transition: transform .25s ease; overflow-y: auto; padding-bottom: 40px; }
+  nav.drawer.open { transform: translateX(0); }
+  nav.drawer .nav-head { background: var(--blue); color: #fff; padding: 16px; border-bottom: 4px solid var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  nav.drawer .nav-head b { font-family: "Press Start 2P", monospace; font-size: 13px; line-height: 1.5; }
+  .close-btn { background: #fff; border: 3px solid var(--ink); border-radius: 8px; font-size: 18px; font-weight: 900; width: 38px; height: 38px; cursor: pointer; flex: none; }
+  nav.drawer ul { list-style: none; margin: 0; padding: 8px 0; }
+  nav.drawer li a { display: block; padding: 11px 18px; color: var(--ink); text-decoration: none; font-weight: 800; font-size: 16px; border-bottom: 2px solid #f0e6c8; }
+  nav.drawer li a:hover { background: var(--yellow); }
+  nav.drawer li.cat { padding: 14px 18px 4px; font-family: "Press Start 2P", monospace; font-size: 10px; color: var(--red); }
+  nav.drawer li a .num { display: inline-block; background: var(--red); color: #fff; border: 2px solid var(--ink); border-radius: 6px; font-size: 12px; padding: 1px 7px; margin-right: 8px; }
+
+  /* ===== Layout ===== */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 80px; }
+  .hero { background: var(--blue); color: #fff; border: 4px solid var(--ink); border-radius: 14px; margin: 20px 0; overflow: hidden; box-shadow: 6px 6px 0 var(--ink); }
+  .hero img { border: none; border-radius: 0; width: 100%; }
+  .hero .hero-text { padding: 18px 20px 22px; }
+  .hero h1 { margin: 0 0 10px; text-shadow: 3px 3px 0 var(--red); }
+  .hero p { margin: 6px 0; font-weight: 700; }
+  .starburst { display: inline-block; background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); border-radius: 999px; padding: 6px 14px; font-family: "Press Start 2P", monospace; font-size: 11px; margin: 4px 6px 4px 0; }
+
+  .card { background: var(--card); border: 4px solid var(--ink); border-radius: 12px; padding: 18px 20px; margin: 22px 0; box-shadow: 5px 5px 0 var(--ink); }
+  .card img { margin: 10px 0; }
+  .card .cap { font-size: 14px; color: #555; text-align: center; margin: 4px 0 0; }
+  .kidtip { background: #fff3ad; border: 4px dashed var(--ink); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
+  .kidtip b { font-family: "Press Start 2P", monospace; font-size: 12px; color: var(--red); }
+  .boss { background: #ffe1e1; border: 4px solid var(--red); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
+  .boss b { font-family: "Press Start 2P", monospace; font-size: 12px; color: var(--red); }
+  .getbox { background: #dff3ff; border: 4px solid var(--blue); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
+  .getbox b { font-family: "Press Start 2P", monospace; font-size: 12px; color: var(--blue); }
+  ol.steps { counter-reset: s; list-style: none; padding: 0; }
+  ol.steps li { counter-increment: s; padding: 10px 0 10px 52px; position: relative; border-bottom: 2px dashed #e8dcc0; }
+  ol.steps li::before { content: counter(s); position: absolute; left: 0; top: 8px; width: 36px; height: 36px; background: var(--yellow); border: 3px solid var(--ink); border-radius: 50%; font-family: "Press Start 2P", monospace; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  ul.check { list-style: none; padding: 0; }
+  ul.check li { padding: 8px 0 8px 36px; position: relative; border-bottom: 2px dashed #e8dcc0; }
+  ul.check li input { position: absolute; left: 0; top: 12px; width: 22px; height: 22px; accent-color: var(--green); cursor: pointer; }
+  ul.check li.done { opacity: .55; text-decoration: line-through; }
+  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .toc-grid a { display: block; background: #fff; border: 3px solid var(--ink); border-radius: 10px; padding: 12px; text-decoration: none; color: var(--ink); font-weight: 800; box-shadow: 3px 3px 0 var(--ink); }
+  .toc-grid a:hover { background: var(--yellow); }
+  .toc-grid a small { display: block; font-weight: 400; color: #555; }
+  .progress { background: #fff; border: 3px solid var(--ink); border-radius: 10px; padding: 10px 14px; font-weight: 800; margin: 14px 0; }
+  .progress .bar { height: 16px; background: #eee; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+  .progress .bar i { display: block; height: 100%; background: var(--green); width: 0%; }
+  .top-link { display: inline-block; margin-top: 14px; font-weight: 800; }
+  .footer { text-align: center; color: #666; font-size: 14px; margin-top: 50px; }
+  @media (max-width: 640px) {
+    body { font-size: 17px; }
+    .toc-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰ MENU</button>
+  <div>
+    <div class="title">OCARINA OF TIME</div>
+    <div class="sub">The Big Kid Guide · 100% Walkthrough</div>
+  </div>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<nav class="drawer" id="drawer" aria-label="Guide menu">
+  <div class="nav-head">
+    <b>GUIDE<br>MENU</b>
+    <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
+  </div>
+  <ul>
+    <li class="cat">START HERE</li>
+    <li><a href="#start">🏠 How to Use This Guide</a></li>
+    <li><a href="#controls">🎮 Controls &amp; New Stuff</a></li>
+    <li><a href="#songs">🎵 All 13 Songs</a></li>
+    <li class="cat">YOUNG LINK — PART 1</li>
+    <li><a href="#kokiri"><span class="num">1</span>Kokiri Forest</a></li>
+    <li><a href="#deku"><span class="num">2</span>Inside the Deku Tree</a></li>
+    <li><a href="#castle"><span class="num">3</span>Hyrule Castle</a></li>
+    <li><a href="#kakariko"><span class="num">4</span>Kakariko Village</a></li>
+    <li><a href="#dodongo"><span class="num">5</span>Dodongo's Cavern</a></li>
+    <li><a href="#jabu"><span class="num">6</span>Jabu-Jabu's Belly</a></li>
+    <li><a href="#temple-time"><span class="num">7</span>Temple of Time</a></li>
+    <li class="cat">GROWN-UP LINK — PART 2</li>
+    <li><a href="#forest"><span class="num">8</span>Forest Temple</a></li>
+    <li><a href="#fire"><span class="num">9</span>Fire Temple</a></li>
+    <li><a href="#water"><span class="num">10</span>Water Temple</a></li>
+    <li><a href="#shadow"><span class="num">11</span>Shadow Temple</a></li>
+    <li><a href="#spirit"><span class="num">12</span>Spirit Temple</a></li>
+    <li><a href="#ganon"><span class="num">13</span>Ganon's Castle &amp; Final Boss</a></li>
+    <li class="cat">100% — GET IT ALL!</li>
+    <li><a href="#hearts">❤️ All 36 Heart Pieces</a></li>
+    <li><a href="#skulls">🕷️ All 100 Gold Skulltulas</a></li>
+    <li><a href="#bottles">🧴 Bottles &amp; Upgrades</a></li>
+    <li><a href="#biggoron">🗡️ Biggoron's Sword Quest</a></li>
+    <li><a href="#masks">🎭 Happy Mask Shop</a></li>
+    <li><a href="#checklist">✅ 100% Checklist</a></li>
+  </ul>
+</nav>
+
+<div class="wrap">
+
+  <div class="hero">
+    <img src="assets/hero-link.webp" alt="Link playing the Ocarina of Time">
+    <div class="hero-text">
+      <h1>THE LEGEND OF ZELDA: OCARINA OF TIME</h1>
+      <p>The full walkthrough for the Nintendo Switch 2 remake — every dungeon, every secret, and every last thing you need for 100%.</p>
+      <span class="starburst">★ 100% GUIDE ★</span>
+      <span class="starburst">KID FRIENDLY</span>
+      <span class="starburst">SWITCH 2 REMAKE</span>
+    </div>
+  </div>
+
+  <div class="card" id="start">
+    <h2>HOW TO USE THIS GUIDE</h2>
+    <p>Hi, hero! This guide will help you beat the whole game and find <b>every secret</b>. You play as <b>Link</b>, a boy who must save the land of <b>Hyrule</b> from the bad guy, <b>Ganondorf</b>.</p>
+    <p><b>How to read it:</b> Play one part at a time. Do the steps in order. If you get stuck, look for the yellow <b>KID TIP</b> boxes. They hold the good tricks!</p>
+    <p><b>Tap the ☰ MENU button</b> at the top left any time to jump to a new part. The menu slides out from the left. Tap ✕ to hide it.</p>
+    <p><b>Check off boxes</b> as you find things. The guide will save your checks on your tablet, so you can close it and come back later.</p>
+    <div class="progress">Your 100% progress: <span id="pct">0%</span>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+    <div class="kidtip"><b>KID TIP!</b> The game has two parts. First you play as <b>Young Link</b> (a kid). Then you pull the Master Sword and grow up into <b>Adult Link</b>. Some things can only be done as a kid. Some can only be done as a grown-up. This guide tells you which is which!</div>
+  </div>
+
+  <div class="card" id="controls">
+    <h2>CONTROLS &amp; NEW STUFF</h2>
+    <p>The remake looks brand new, but the game is the same great adventure from 1998. Here is what is new on Switch 2:</p>
+    <ul>
+      <li><b>Quest Log:</b> Press pause to see what to do next. Stuck? Check the log!</li>
+      <li><b>Sing with your voice:</b> You can hum or play the ocarina songs with the mic. Or just press the buttons like always.</li>
+      <li><b>Jump and dash:</b> Link can now jump and dash on his own. No more waiting for the game to do it for you.</li>
+      <li><b>New camera:</b> You can move the camera to look all around.</li>
+      <li><b>Voices and music:</b> The big story scenes now have real voices and a full band playing the music.</li>
+      <li><b>Hall of Fallen Heroes:</b> A new place to see the big bad guys you beat.</li>
+    </ul>
+    <h3>THE BUTTONS YOU NEED MOST</h3>
+    <ul>
+      <li><b>Z-Target (hold L):</b> Lock on to a bad guy or a friend. This is the most key move in the game!</li>
+      <li><b>Sword:</b> Press B to swing. Hold B, then let go for a spin attack.</li>
+      <li><b>Shield:</b> Hold R to block. Always block when a bad guy is about to hit you.</li>
+      <li><b>Roll:</b> Push the stick and press A to roll. Rolling is fast!</li>
+      <li><b>Ocarina:</b> Press the ocarina button, then play songs with the buttons.</li>
+      <li><b>Talk:</b> Walk up to a person and press A.</li>
+    </ul>
+    <div class="kidtip"><b>KID TIP!</b> Save a lot! Open the pause menu and save any time you are outside a dungeon. If you lose a big fight, you will be glad you saved. Also: some shop prices changed in the remake. If a price in this guide looks different in your game, trust your game!</div>
+  </div>
+
+  <div class="card" id="songs">
+    <h2>ALL 13 SONGS</h2>
+    <p>You play songs on your ocarina. Each song does magic. Learn them all for 100%! Hold ZL to open your songbook and see the songs you know.</p>
+    <ul class="check">
+      <li><input type="checkbox"> <b>Zelda's Lullaby</b> — Zelda teaches you at Hyrule Castle. Opens magic doors and changes the Water Temple water.</li>
+      <li><input type="checkbox"> <b>Epona's Song</b> — Malon teaches you at Lon Lon Ranch. Calls your horse, Epona.</li>
+      <li><input type="checkbox"> <b>Saria's Song</b> — Saria teaches you in the Lost Woods. Lets you talk to Saria any time.</li>
+      <li><input type="checkbox"> <b>Sun's Song</b> — Play it in the Royal Family's Tomb in Kakariko. Turns night to day and day to night.</li>
+      <li><input type="checkbox"> <b>Song of Time</b> — Zelda teaches you in the Temple of Time. Moves big blue blocks and opens the Door of Time.</li>
+      <li><input type="checkbox"> <b>Song of Storms</b> — The windmill man in Kakariko teaches you. Makes it rain and fills the well.</li>
+      <li><input type="checkbox"> <b>Minuet of Forest</b> — Sheik teaches you. Warps you to the Forest Temple.</li>
+      <li><input type="checkbox"> <b>Bolero of Fire</b> — Sheik teaches you. Warps you to the Fire Temple.</li>
+      <li><input type="checkbox"> <b>Serenade of Water</b> — Sheik teaches you. Warps you to the Water Temple.</li>
+      <li><input type="checkbox"> <b>Requiem of Spirit</b> — Sheik teaches you. Warps you to the Spirit Temple.</li>
+      <li><input type="checkbox"> <b>Nocturne of Shadow</b> — Sheik teaches you. Warps you to the Shadow Temple.</li>
+      <li><input type="checkbox"> <b>Prelude of Light</b> — Sheik teaches you. Warps you to the Temple of Time.</li>
+      <li><input type="checkbox"> <b>Scarecrow's Song</b> — Make up your own 8-note tune! Teach it to the scarecrow at Lake Hylia as a kid, then play it again as a grown-up. It calls Pierre the scarecrow, who you can Hookshot to.</li>
+    </ul>
+    <div class="kidtip"><b>KID TIP!</b> Warp songs are your fast travel. Stuck far from a temple? Play its warp song and zoom — you will land right at the door!</div>
+  </div>
+
+  <!-- ================= YOUNG LINK ================= -->
+  <div class="card" id="kokiri">
+    <h2>1. KOKIRI FOREST</h2>
+    <img src="assets/kokiri.jpg" alt="Kokiri Forest in the Ocarina of Time remake">
+    <p class="cap">Your home! A small village in the woods.</p>
+    <p><b>Goal:</b> Get a sword and a shield, then go see the Great Deku Tree.</p>
+    <ol class="steps">
+      <li>Wake up! Navi the fairy will fly in and talk to you. Go outside your tree house.</li>
+      <li>Find <b>Saria</b> (your friend in green) and talk to her. She tells you to see the Great Deku Tree.</li>
+      <li>Go to the <b>Forest Training Center</b> (the small hole in the hill near the pond). Crawl through it. Open the chest to get the <b>Kokiri Sword</b>!</li>
+      <li>Buy the <b>Deku Shield</b> in the shop for 40 rupees. Need cash? Cut grass and smash pots — rupees pop out!</li>
+      <li>Walk up to the big tree with the face. That is the <b>Great Deku Tree</b>. He will give you your first big job.</li>
+    </ol>
+    <div class="kidtip"><b>KID TIP!</b> Before you leave, play with the rocks near your house. Lift them! One hides 20 rupees. Also, talk to all your friends. Mido is grumpy, but he is funny.</div>
+    <div class="getbox"><b>YOU GET:</b> Kokiri Sword, Deku Shield</div>
+  </div>
+
+  <div class="card" id="deku">
+    <h2>2. INSIDE THE DEKU TREE</h2>
+    <img src="assets/deku.jpg" alt="The Great Deku Tree">
+    <p class="cap">The first dungeon! It is dark and full of spider webs.</p>
+    <p><b>Goal:</b> Beat the big spider queen and get the green stone.</p>
+    <ol class="steps">
+      <li>Go in the tree's big mouth. Kill the little spiders (called Skullwalltulas) on the walls.</li>
+      <li>Climb the vines up to the top floor. Watch out for the big spiders on the walls — hit them with your sword.</li>
+      <li>Find the chest with the <b>Fairy Slingshot</b>. Now you can shoot seeds far away!</li>
+      <li>Use the slingshot to shoot the big eye above the door. The door will open.</li>
+      <li>Light a Deku Stick on fire and burn the spider webs on the floor. Jump down the hole.</li>
+      <li>At the very bottom, you will see the big boss: <b>Queen Gohma</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: QUEEN GOHMA</b><br>She is a giant spider with one big red eye. Wait for her eye to turn red. Shoot it with your slingshot! Then run up and hit her with your sword. Do it 3 times and she is done. You did it!</div>
+    <div class="getbox"><b>YOU GET:</b> Fairy Slingshot, Heart Container, Kokiri's Emerald (the green stone)</div>
+    <div class="kidtip"><b>KID TIP!</b> Deku Sticks break fast! Light one, then run to the web right away. If it goes out, light a new one.</div>
+  </div>
+
+  <div class="card" id="castle">
+    <h2>3. HYRULE CASTLE</h2>
+    <img src="assets/hyrule-castle.jpg" alt="Hyrule Castle">
+    <p class="cap">The big white castle in the middle of Hyrule Field.</p>
+    <p><b>Goal:</b> Meet Princess Zelda and learn her song.</p>
+    <ol class="steps">
+      <li>Leave the forest and cross <b>Hyrule Field</b>. It is big! Run straight to the castle town. At night, scary skeletons come out — run fast or wait for day.</li>
+      <li>In the market, find the <b>Happy Mask Shop</b> and the shops. Buy what you need.</li>
+      <li>Go to the castle. The guards will not let you in the front. Sneak around the side!</li>
+      <li>Hide behind bushes and walls. If a guard sees you, he will toss you out and you must start the sneak again.</li>
+      <li>Climb the vines on the wall and drop into the yard. Meet <b>Princess Zelda</b>! She tells you about Ganondorf and gives you <b>Zelda's Letter</b>.</li>
+      <li>She teaches you about Ganondorf. Then her guard <b>Impa</b> teaches you <b>Zelda's Lullaby</b>. This song opens magic doors all over the game!</li>
+    </ol>
+    <div class="kidtip"><b>KID TIP!</b> Talk to the man in the market who loves masks. He will help you later. And do not forget to play the Sun's Song trick: play Zelda's Lullaby near the guards to make them sleepy? No — just sneak slow and low!</div>
+    <div class="getbox"><b>YOU GET:</b> Zelda's Letter, Zelda's Lullaby</div>
+  </div>
+
+  <div class="card" id="kakariko">
+    <h2>4. KAKARIKO VILLAGE</h2>
+    <p><b>Goal:</b> Meet the people, get new gear, and get ready for Death Mountain.</p>
+    <ol class="steps">
+      <li>Go east from Hyrule Field to Kakariko Village. Talk to everyone. The village has lots of secrets!</li>
+      <li>Climb the watchtower and talk to the man up top. He gives you a hint about the well.</li>
+      <li>Go to the graveyard. Pull the grave stones to find rupees and a Heart Piece. (See the Heart Piece list for the exact one!)</li>
+      <li>Play <b>Zelda's Lullaby</b> at the big Triforce mark on the floor of the Royal Family's Tomb to open it. Inside, play the <b>Sun's Song</b> to learn it!</li>
+      <li>Buy the <b>Hylian Shield</b> in the shop if you want a strong shield. Save up your rupees first!</li>
+      <li>Head up the trail to <b>Death Mountain</b>. A big rock blocks the path — play Zelda's Lullaby to open the gate.</li>
+    </ol>
+    <div class="kidtip"><b>KID TIP!</b> Kakariko is full of cuccos (chickens). Do NOT hit them! If you hit one too much, a whole flock will attack you. It is funny, but it hurts.</div>
+    <div class="getbox"><b>YOU GET:</b> Sun's Song, Hylian Shield (if you buy it)</div>
+  </div>
+
+  <div class="card" id="dodongo">
+    <h2>5. DODONGO'S CAVERN</h2>
+    <p><b>Goal:</b> Beat King Dodongo and get the red stone.</p>
+    <ol class="steps">
+      <li>Climb Death Mountain to Goron City. Talk to <b>Darunia</b>, the Goron boss. He is sad. Play <b>Saria's Song</b> for him — it makes him dance!</li>
+      <li>Darunia opens Dodongo's Cavern for you. Go in!</li>
+      <li>Find the chest with the <b>Bomb Bag</b>. Now you can carry bombs! Use bombs to blow up cracked walls and rocks.</li>
+      <li>Push the big block in the main room to open new paths. Light the torches with a Deku Stick to open doors.</li>
+      <li>Keep going up. At the top, you will find <b>King Dodongo</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: KING DODONGO</b><br>He is a giant lizard that rolls at you! When he opens his big mouth, throw a bomb in. BOOM! Then hit him with your sword while he is dizzy. Do it 3 times. Watch out for his fire breath — hide behind the pillars.</div>
+    <div class="getbox"><b>YOU GET:</b> Bomb Bag, Heart Container, Goron's Ruby (the red stone)</div>
+    <div class="kidtip"><b>KID TIP!</b> Bombs can hurt you too! Throw them, then run back. And if you run out of bombs, look for bomb flowers — pick them up and throw them.</div>
+  </div>
+
+  <div class="card" id="jabu">
+    <h2>6. JABU-JABU'S BELLY</h2>
+    <p><b>Goal:</b> Save Princess Ruto and get the blue stone.</p>
+    <ol class="steps">
+      <li>Go to <b>Zora's Domain</b> (up the river). At the top of the waterfall, play the <b>Diving Game</b>: dive down and grab all the rupees the man throws in. Win and you get the <b>Silver Scale</b>. Now you can dive deep!</li>
+      <li>Swim through the dark tunnel at the bottom of Zora's Domain. It comes out in <b>Lake Hylia</b>. Dive to the lake floor and pick up the bottle with <b>Ruto's Letter</b> in it.</li>
+      <li>Take the letter to <b>King Zora</b> in Zora's Domain (up the river). He will move and let you into the big fish, Jabu-Jabu!</li>
+      <li>Inside the fish, find <b>Princess Ruto</b>. She is mad at you. Pick her up and carry her! (Press A near her to pick her up. Put her down with A when you need to fight.)</li>
+      <li>Find the chest with the <b>Boomerang</b>. It is your new best toy — it can hit switches far away!</li>
+      <li>Carry Ruto to the top room. She will go up to the boss room. Follow her!</li>
+    </ol>
+    <div class="boss"><b>BOSS: BARINADE</b><br>He is a big jellyfish with electric balls around him. Throw your Boomerang to knock the electric balls off. Then hit his body with your sword or Boomerang. When he sticks to the roof, throw the Boomerang at him. Keep going until he pops!</div>
+    <div class="getbox"><b>YOU GET:</b> Boomerang, Silver Scale, Heart Container, Zora's Sapphire (the blue stone)</div>
+    <div class="kidtip"><b>KID TIP!</b> Ruto is heavy! If you put her down, she stays where you left her. If you fall in a hole, she comes back to the start room. Do not panic — just go get her again.</div>
+  </div>
+
+  <div class="card" id="temple-time">
+    <h2>7. TEMPLE OF TIME</h2>
+    <img src="assets/master-sword.webp" alt="Link pulling the Master Sword">
+    <p class="cap">The big moment! You pull the Master Sword and grow up!</p>
+    <ol class="steps">
+      <li>You now have all 3 magic stones: green, red, and blue. Go back to Hyrule Castle Town.</li>
+      <li>Oh no! Ganondorf is attacking! Zelda and her guard Impa run away on a horse. Zelda throws something into the moat — the <b>Ocarina of Time</b>! Fish it out.</li>
+      <li>Go to the Temple of Time (north of the market). Stand on the mat and play the <b>Song of Time</b>. The Door of Time opens!</li>
+      <li>Walk in and pull the <b>Master Sword</b> from its stone. FLASH! You wake up 7 years later — you are all grown up!</li>
+      <li>A kind man named <b>Rauru</b> tells you what happened: Ganondorf took over Hyrule while you slept. Now you must wake the 5 Sages and stop him.</li>
+      <li><b>Sheik</b> teaches you the <b>Prelude of Light</b>. This song warps you back to the Temple of Time any time.</li>
+    </ol>
+    <div class="kidtip"><b>KID TIP!</b> You can go back to being a kid! Put the Master Sword back in its stone to turn young again, and pull it out to grow up. Some secrets need Young Link. Some need Adult Link. You will switch a lot!</div>
+    <div class="getbox"><b>YOU GET:</b> Ocarina of Time, Master Sword, Prelude of Light</div>
+  </div>
+
+  <!-- ================= ADULT LINK ================= -->
+  <div class="card" id="forest">
+    <h2>8. FOREST TEMPLE</h2>
+    <p><b>Goal:</b> Wake Saria, the Sage of Forest. The temple is twisty — the halls turn and change!</p>
+    <ol class="steps">
+      <li>Go back to Kokiri Forest. It is full of monsters now! Sheik meets you outside and teaches you the <b>Minuet of Forest</b>.</li>
+      <li>Enter the Forest Temple. Fight the Stalfos (skeleton knights) in the first big room.</li>
+      <li>Find the chest with the <b>Fairy Bow</b>. Now you can shoot arrows!</li>
+      <li>The temple has 4 Poe sisters (ghosts) hiding in paintings. Find each Poe and beat her to light a torch. Light all 4 torches to open the boss door.</li>
+      <li>Twisted halls: shoot the eye switches to untwist the halls and open new doors. Use your Hookshot to cross gaps.</li>
+      <li>At the end, face <b>Phantom Ganon</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: PHANTOM GANON</b><br>He jumps out of paintings on his horse! Watch the paintings — the real Ganon comes out of the one that looks right. Shoot him with your bow as he rides at you. If you shoot the fake one, it will hit you back. When he falls off his horse, hit him with your sword. Do it 3 times!</div>
+    <div class="getbox"><b>YOU GET:</b> Fairy Bow, Heart Container, Forest Medallion, Minuet of Forest</div>
+    <div class="kidtip"><b>KID TIP!</b> The Poe sisters are Meg, Joelle, Beth, and Amy. Each one hides in a different part of the temple. If you lose track, check your Quest Log!</div>
+  </div>
+
+  <div class="card" id="fire">
+    <h2>9. FIRE TEMPLE</h2>
+    <img src="assets/fire-temple.png" alt="The Fire Temple">
+    <p class="cap">Hot, hot, hot! Bring a Goron Tunic so the fire does not hurt you.</p>
+    <p><b>Goal:</b> Wake Darunia, the Sage of Fire. Free all the Gorons locked in cells!</p>
+    <ol class="steps">
+      <li>Go to Goron City on Death Mountain. Buy the <b>Goron Tunic</b> in the shop and put it on! It costs a lot of rupees, so save up first.</li>
+      <li>Sheik meets you and teaches you the <b>Bolero of Fire</b>.</li>
+      <li>Enter the Fire Temple in the volcano crater. It is a maze of hot rooms!</li>
+      <li>Free the Gorons in the cells. Each one gives you a tip or a key. You need the Small Keys to open locked doors.</li>
+      <li>Find the chest with the <b>Megaton Hammer</b>. It is super heavy and smashes rusty switches and rocks!</li>
+      <li>Use the Hammer on the big rusty switch to open the boss door. Face <b>Volvagia</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: VOLVAGIA</b><br>He is a giant fire dragon that pops out of lava holes! Stand near a hole and wait. When he pops up, hit him with your Hammer. Then slash him with your sword. Do not stand in the lava! When he flies, run away from his fire rocks.</div>
+    <div class="getbox"><b>YOU GET:</b> Megaton Hammer, Goron Tunic, Heart Container, Fire Medallion, Bolero of Fire</div>
+    <div class="kidtip"><b>KID TIP!</b> The Fire Temple has a lot of locked doors. If you run out of keys, you missed a Goron cell. Go back and look for cells you did not open yet!</div>
+  </div>
+
+  <div class="card" id="water">
+    <h2>10. WATER TEMPLE</h2>
+    <p><b>Goal:</b> Wake Ruto, the Sage of Water. This is the hardest temple — take your time!</p>
+    <ol class="steps">
+      <li>Go to Lake Hylia. Sheik teaches you the <b>Serenade of Water</b>. Put on your <b>Iron Boots</b> (find them in a chest in the temple) to walk on the lake floor.</li>
+      <li>Enter the Water Temple. The water level goes up and down. Play <b>Zelda's Lullaby</b> at the blue Triforce marks to change the water level. Low, middle, high — each level opens new doors!</li>
+      <li>Find the <b>Longshot</b> after the Dark Link fight. It reaches twice as far as your Hookshot.</li>
+      <li>Fight <b>Dark Link</b> — a shadow copy of you! He copies your moves. Best trick: use the Megaton Hammer or Din's Fire. Or just keep hitting him with your sword and do not stop.</li>
+      <li>Use the Longshot to hit the eye switch high up in the main room. This opens the boss door.</li>
+      <li>Face <b>Morpha</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: MORPHA</b><br>She is a giant water blob with a little ball inside. Use your Longshot to pull the ball out of the water. Then hit the ball with your sword! When she grabs you, she will drag you under — break free fast. Do it 3 times.</div>
+    <div class="getbox"><b>YOU GET:</b> Iron Boots, Longshot, Heart Container, Water Medallion, Serenade of Water</div>
+    <div class="kidtip"><b>KID TIP!</b> Stuck in the Water Temple? Check the water level! Most stuck spots are fixed by changing the water to low, middle, or high. And wear the Iron Boots to sink, then take them off to float back up.</div>
+  </div>
+
+  <div class="card" id="shadow">
+    <h2>11. SHADOW TEMPLE</h2>
+    <p><b>Goal:</b> Wake Impa, the Sage of Shadow. This temple is spooky and full of fake walls!</p>
+    <ol class="steps">
+      <li>First, you need the <b>Lens of Truth</b>. As a grown-up, go to the well in Kakariko Village. Play the <b>Song of Storms</b> to drain the well, then climb down into the <b>Bottom of the Well</b>. Beat the mini-dungeon and get the Lens of Truth from the chest.</li>
+      <li>Go to the graveyard in Kakariko. Play <b>Zelda's Lullaby</b> at the big tomb to open the Shadow Temple.</li>
+      <li>Sheik teaches you the <b>Nocturne of Shadow</b> before you go in.</li>
+      <li>Use the Lens of Truth to see hidden things: fake walls, hidden floors, and invisible bad guys!</li>
+      <li>Find the <b>Hover Boots</b> in a chest. They let you walk on air for a short time — great for crossing big gaps!</li>
+      <li>Ride the boat across the river of the dead, then face <b>Bongo Bongo</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: BONGO BONGO</b><br>He is a giant ghost with big hands and one big eye — and you can only see him with the Lens of Truth! Shoot his hands with your bow to stun them, then shoot his big eye. When he falls down, hit him with your sword. Watch out for his drum beat — it shakes the whole room!</div>
+    <div class="getbox"><b>YOU GET:</b> Lens of Truth, Hover Boots, Heart Container, Shadow Medallion, Nocturne of Shadow</div>
+    <div class="kidtip"><b>KID TIP!</b> The Lens of Truth uses magic. If your magic runs out, look for green magic jars. And always check fake walls with the Lens — there are secret rooms with treasure!</div>
+  </div>
+
+  <div class="card" id="spirit">
+    <h2>12. SPIRIT TEMPLE</h2>
+    <p><b>Goal:</b> Wake Nabooru, the Sage of Spirit. You need BOTH Young Link and Adult Link for this one!</p>
+    <ol class="steps">
+      <li>Go to the Desert Colossus in the Haunted Wasteland (west of Gerudo Valley). Sheik teaches you the <b>Requiem of Spirit</b>.</li>
+      <li>First, go in as <b>Young Link</b> (put the Master Sword back in the Temple of Time). Climb up and find the chest with the <b>Silver Gauntlets</b>. They let you lift big gray rocks!</li>
+      <li>Now go back as <b>Adult Link</b>. Use the Silver Gauntlets to move the big block and open the way.</li>
+      <li>Find the <b>Mirror Shield</b> in a chest after beating an Iron Knuckle (a knight in armor). The Mirror Shield can bounce light and magic!</li>
+      <li>Use the Mirror Shield to bounce light onto the sun faces on the walls. This opens doors.</li>
+      <li>Face the twin witches: <b>Twinrova</b>.</li>
+    </ol>
+    <div class="boss"><b>BOSS: TWINROVA</b><br>Two twin witches — one shoots fire, one shoots ice! Hold up your Mirror Shield to catch one's magic, then it will bounce and hit the other twin. When they join into one big witch, keep blocking with the Mirror Shield to soak up her magic, then let it go back at her. Then slash with your sword!</div>
+    <div class="getbox"><b>YOU GET:</b> Silver Gauntlets, Mirror Shield, Heart Container, Spirit Medallion, Requiem of Spirit</div>
+    <div class="kidtip"><b>KID TIP!</b> The Iron Knuckle is slow but strong. Hit him, then back off fast. When his armor falls off, he gets fast — be ready to run and roll!</div>
+  </div>
+
+  <div class="card" id="ganon">
+    <h2>13. GANON'S CASTLE &amp; FINAL BOSS</h2>
+    <img src="assets/ganon.jpg" alt="Link faces Ganondorf">
+    <p class="cap">The last fight! You can do it, hero!</p>
+    <p><b>Goal:</b> Break the 6 magic walls, beat Ganondorf, and save Hyrule!</p>
+    <ol class="steps">
+      <li>Go to Hyrule Castle (it is now Ganon's Castle). You need the <b>Golden Gauntlets</b> — find them in a chest inside the castle. They let you lift the huge black rocks blocking the way.</li>
+      <li>Inside, there are 6 magic walls: Light, Forest, Fire, Water, Shadow, and Spirit. Each one is a mini-test. Break all 6!</li>
+      <li>Climb to the top tower. <b>Ganondorf</b> is waiting, playing his organ.</li>
+    </ol>
+    <div class="boss"><b>BOSS: GANONDORF</b><br>He shoots big magic balls at you! Hit the ball back at him with your sword (like tennis) or catch it in an empty bottle and throw it back. When he is stunned, hit him with your sword or shoot him with a Light Arrow. Do it until he falls, then hit him with all you have!</div>
+    <p>After Ganondorf falls, the castle starts to fall down! Run out fast — follow Zelda and do not stop!</p>
+    <div class="boss"><b>FINAL BOSS: GANON</b><br>Outside, Ganondorf turns into a giant pig beast named Ganon! He is big and strong. Hit his tail with the Master Sword (or the Biggoron's Sword if you have it). When Zelda holds him still with her light, run up and give him the final hit with the Master Sword!</div>
+    <div class="getbox"><b>YOU WIN!</b> You saved Hyrule! Watch the happy ending. You are a true hero, Link!</div>
+    <div class="kidtip"><b>KID TIP!</b> Before the final fight, stock up! Fill your bottles with fairies (catch them in bottles at fairy fountains). If you fall in a fight, a fairy will bring you back to life. Fairies are the best!</div>
+  </div>
+
+  <!-- ================= 100% ================= -->
+  <div class="card" id="hearts">
+    <h2>❤️ ALL 36 HEART PIECES</h2>
+    <p>4 Heart Pieces = 1 whole new Heart Container. Find all 36 and you get 9 extra hearts! With the 8 boss Heart Containers, that is 20 hearts in all — the max!</p>
+    <p><b>How to read this list:</b> 👦 = do it as Young Link (kid). 🧑 = do it as Adult Link (grown-up). Some need magic beans: plant a bean in soft dirt as a kid, then ride the big plant as a grown-up!</p>
+    <ul class="check">
+      <li><input type="checkbox"> <b>1. Hyrule Field — Scrub Grotto</b> 👦 As a grown-up, read the Fairy's Thought by a tree in Hyrule Field to learn a secret word. Then as a kid, drop into the round hole by the moat near the castle town, say the word, and pay 100 rupees.</li>
+      <li><input type="checkbox"> <b>2. Hyrule Field — Canyon Chest</b> 👦 As a grown-up, read the Fairy's Thought by the chest in the red-rock canyon (west Hyrule Field). Then open the chest as a kid.</li>
+      <li><input type="checkbox"> <b>3. Lon Lon Ranch — Tower Crates</b> 👦 In the old stone building in the south-west corner, push the crates and crawl through to the round stone room.</li>
+      <li><input type="checkbox"> <b>4. Castle Town — Lost Dog</b> 👦 At night, find the small white dog in the back alley and lead him to the lady calling his name.</li>
+      <li><input type="checkbox"> <b>5. Castle Town — Bombchu Bowling</b> 👦 10 rupees a game. Win 3 times in a row! 1st win = Bombchus, 2nd win = Biggest Bomb Bag, 3rd win = Heart Piece.</li>
+      <li><input type="checkbox"> <b>6. Castle Town — Treasure Box Shop</b> 👦 At night. You need the Lens of Truth. Pay 10 rupees, use the Lens to find the key chest in each of 5 rooms. The prize room chest has the piece.</li>
+      <li><input type="checkbox"> <b>7. Kakariko — Rooftop Cucco</b> 👦 Carry a Cucco up the stairs past the well, climb the ladder, grab a second Cucco and glide onto the purple roofs. The red-haired man by the far wall gives you the piece.</li>
+      <li><input type="checkbox"> <b>8. Kakariko — Owl Ride Rooftop</b> 👦 Talk to the big owl at the top of Death Mountain again and take his ride. He drops you on the blue roofs — cross to the red-tiled roof by the cow barn.</li>
+      <li><input type="checkbox"> <b>9. Kakariko — Windmill</b> 🧑 Go through Dampé's tunnel from the graveyard to the windmill's top floor. The piece is on the walkway around the big shaft.</li>
+      <li><input type="checkbox"> <b>10. Kakariko — House of Skulltula</b> 👦🧑 Free all 50 of the cursed man's sons (50 Gold Skulltula tokens). He thanks you with a Heart Piece.</li>
+      <li><input type="checkbox"> <b>11. Graveyard — Dampé's Digging</b> 👦 At night, pay Dampé 20 rupees. The piece is in his 4th dirt pile — grab it before the light goes out!</li>
+      <li><input type="checkbox"> <b>12. Graveyard — Tombstone Chest</b> 👦🧑 Pull back the bottom grave stone in the right-most row, drop in the hole, and open the chest at the end.</li>
+      <li><input type="checkbox"> <b>13. Graveyard — Magic Bean Ride</b> 🧑 Plant a Magic Bean in the soft dirt by the graveyard wall as a kid. As a grown-up, ride the big plant over the wall to the piece on a block.</li>
+      <li><input type="checkbox"> <b>14. Graveyard — Dampé's Race</b> 🧑 With the Hookshot, drop into Dampé's grave and race him in 1 minute. Follow his lantern! The chest at the end has the piece.</li>
+      <li><input type="checkbox"> <b>15. Lost Woods — Skull Kid Game</b> 👦 Stand on the short stump in the Skull Kid's clearing and copy the tunes he plays. Win the 3rd (longest) round!</li>
+      <li><input type="checkbox"> <b>16. Lost Woods — Saria's Song</b> 👦 After you learn Saria's Song, play it for the second Skull Kid on a stump deeper in the woods. He calls you a friend and gives you the piece.</li>
+      <li><input type="checkbox"> <b>17. Death Mountain Trail — Magic Bean</b> 🧑 Plant a Magic Bean in the soft dirt at the top of the trail as a kid. As a grown-up, ride the plants up past the rope bridge to a nook in the rock wall.</li>
+      <li><input type="checkbox"> <b>18. Goron City — Spinning Pot</b> 👦 Throw a bomb (or a lit Deku Stick) into the big spinning pot on the top floor to stop it. The piece pops out!</li>
+      <li><input type="checkbox"> <b>19. Death Mountain Crater — Hidden Nook</b> 👦 Climb down the net hanging down the crater wall. The hidden nook at the bottom has the piece.</li>
+      <li><input type="checkbox"> <b>20. Death Mountain Crater — Business Scrub</b> 👦 Bring 100 rupees. Knock the Business Scrub out of its plant in the south crater and buy the piece for 100 rupees.</li>
+      <li><input type="checkbox"> <b>21. Death Mountain Crater — Magic Bean</b> 🧑 Plant a Magic Bean on the crater floor as a kid (warp there with the Bolero of Fire). As a grown-up, ride the plants to the small lava island with the piece.</li>
+      <li><input type="checkbox"> <b>22. Zora River — Cucco Islets</b> 👦 Carry a Cucco and glide from islet to islet across the river. The chain ends at the piece.</li>
+      <li><input type="checkbox"> <b>23. Zora River — Cucco Ledge</b> 👦 Carry a Cucco along the cliff path and across the stone bridge, then along the narrow shelf past the stream.</li>
+      <li><input type="checkbox"> <b>24. Zora River — Frogs, Song of Storms</b> 👦 First learn the Song of Storms as a grown-up. Then as a kid, play it for the five frogs on stumps by the waterfall pool. They drop the piece!</li>
+      <li><input type="checkbox"> <b>25. Zora River — Frog Bug Game</b> 👦 After the frog piece, play the Song of Time when the frogs ask for one more song, then play notes while they catch bugs until they are full.</li>
+      <li><input type="checkbox"> <b>26. Zora's Domain — Torch Chest</b> 👦 Light a Deku Stick on a burning torch, then light every unlit torch in the dark hall. A chest pops up at the end!</li>
+      <li><input type="checkbox"> <b>27. Zora's Fountain — Iceberg</b> 🧑 Hop across the ice blocks to the far ledge.</li>
+      <li><input type="checkbox"> <b>28. Zora's Fountain — Underwater Cave</b> 🧑 Dive from the open water near the stone pillar into the dark cave under the ice. The piece is at the end.</li>
+      <li><input type="checkbox"> <b>29. Lake Hylia — Fishing Pond</b> 👦 Pay 10 rupees for the rod and catch a big fish (about 56 cm). The fishing man gives you the piece. (Do not use the sinking lure — those fish do not count!)</li>
+      <li><input type="checkbox"> <b>30. Lake Hylia — Lab Diving</b> 🧑 With the Golden Scale, dive to the grate at the bottom of the lab's deep tank. The scientist gives you the piece when you come up.</li>
+      <li><input type="checkbox"> <b>31. Lake Hylia — Tower</b> 🧑 Plant a Magic Bean by the Lakeside Lab as a kid. As a grown-up, ride the plant across the dry lake bed to the stone tower and climb to the top.</li>
+      <li><input type="checkbox"> <b>32. Gerudo Valley — Cucco Ledge Chest</b> 👦 Carry a Cucco and jump across the ravine to the chest in the south-west. (Grown-ups can jump from the north cliff and Hookshot across.)</li>
+      <li><input type="checkbox"> <b>33. Gerudo Valley — Waterfall Cliff</b> 👦 Drop into the water on the north side, swim to shore, and follow the path behind the waterfall to the end.</li>
+      <li><input type="checkbox"> <b>34. Gerudo's Fortress — Scarecrow Chest</b> 🧑 Play your Scarecrow's Song to call Pierre on the fortress roof, Hookshot to him, and open the rooftop chest.</li>
+      <li><input type="checkbox"> <b>35. Gerudo's Fortress — Horseback Archery</b> 🧑 With Epona and the Fairy Bow, score 1,000+ points at Horseback Archery (30 rupees a try).</li>
+      <li><input type="checkbox"> <b>36. Desert Colossus — Magic Bean</b> 🧑 Plant a Magic Bean at the Colossus as a kid (warp there with the Requiem of Spirit). As a grown-up, ride the plant up and shoot the piece off the arch in front of the Spirit Temple with your Bow.</li>
+    </ul>
+    <div class="kidtip"><b>KID TIP!</b> Your map counts Heart Pieces in each place! Open the map and look at the numbers. If a place says 3 of 4, you missed one there. Also, you must pick up Heart Pieces with your hands (press A) — the Boomerang and Hookshot can not grab them in the remake.</div>
+  </div>
+
+  <div class="card" id="skulls">
+    <h2>🕷️ ALL 100 GOLD SKULLTULAS</h2>
+    <p>Gold Skulltulas are little gold spiders. Kill one and grab its <b>token</b>. Take tokens to the <b>House of Skulltula</b> in Kakariko Village to free the cursed family and win prizes!</p>
+    <div class="kidtip"><b>KID TIP!</b> Most outside spiders only come out at <b>night</b>. Play the Sun's Song to make it night. Dungeon spiders are out any time. Some hide in trees — hit the tree or run into it! Some hide under soft dirt — drop a bug from a bottle on the dirt patch and the spider pops out. Listen for their scratchy sound!</div>
+    <h3>PRIZES AT THE HOUSE OF SKULLTULA</h3>
+    <ul>
+      <li><b>10 tokens:</b> Adult's Wallet — holds 500 rupees!</li>
+      <li><b>20 tokens:</b> Echo Gem — it glows and makes sounds near spiders you have not found yet. It gets stronger as you get close!</li>
+      <li><b>30 tokens:</b> Giant's Wallet — holds 1,000 rupees!</li>
+      <li><b>40 tokens:</b> 20 Bombchus</li>
+      <li><b>50 tokens:</b> A Piece of Heart (counts in the 36!)</li>
+      <li><b>100 tokens:</b> A Gold Rupee worth 200 rupees — and you can come back for more, every visit!</li>
+    </ul>
+    <h3>HOW MANY IN EACH PLACE</h3>
+    <p>Use this table with your in-game map. The map shows how many you found in each place. Hunt the places with missing ones first!</p>
+    <ul>
+      <li>Great Deku Tree: <b>4</b> (kid)</li>
+      <li>Kokiri Forest: <b>3</b> (2 kid, 1 grown-up)</li>
+      <li>Lost Woods: <b>3</b> (2 kid, 1 grown-up)</li>
+      <li>Sacred Forest Meadow: <b>1</b> (grown-up)</li>
+      <li>Hyrule Field: <b>3</b> (2 kid, 1 grown-up)</li>
+      <li>Lon Lon Ranch: <b>3</b> (kid)</li>
+      <li>Hyrule Castle Town: <b>1</b> (kid)</li>
+      <li>Hyrule Castle: <b>2</b> (kid)</li>
+      <li>Ganon's Castle: <b>1</b> (grown-up)</li>
+      <li>Kakariko Village: <b>6</b> (5 kid, 1 grown-up)</li>
+      <li>Graveyard: <b>2</b> (kid)</li>
+      <li>Death Mountain Trail: <b>4</b> (2 kid, 2 grown-up)</li>
+      <li>Goron City: <b>2</b> (1 kid, 1 grown-up)</li>
+      <li>Death Mountain Crater: <b>2</b> (kid)</li>
+      <li>Zora River: <b>4</b> (2 kid, 2 grown-up)</li>
+      <li>Zora's Domain: <b>1</b> (grown-up)</li>
+      <li>Zora's Fountain: <b>3</b> (2 kid, 1 grown-up)</li>
+      <li>Lake Hylia: <b>5</b> (3 kid, 2 grown-up)</li>
+      <li>Gerudo Valley: <b>4</b> (2 kid, 2 grown-up)</li>
+      <li>Gerudo's Fortress: <b>2</b> (grown-up)</li>
+      <li>Haunted Wasteland: <b>1</b> (grown-up)</li>
+      <li>Desert Colossus: <b>3</b> (1 kid, 2 grown-up)</li>
+      <li>Dodongo's Cavern: <b>5</b> (4 kid, 1 grown-up)</li>
+      <li>Jabu-Jabu's Belly: <b>4</b> (kid)</li>
+      <li>Forest Temple: <b>5</b> (grown-up)</li>
+      <li>Fire Temple: <b>5</b> (grown-up)</li>
+      <li>Ice Cavern: <b>3</b> (grown-up)</li>
+      <li>Water Temple: <b>5</b> (grown-up)</li>
+      <li>Bottom of the Well: <b>3</b> (kid)</li>
+      <li>Shadow Temple: <b>5</b> (grown-up)</li>
+      <li>Spirit Temple: <b>5</b> (3 kid, 2 grown-up)</li>
+    </ul>
+    <p><b>Total: 100!</b> (52 as a kid, 48 as a grown-up. 56 outside + 44 in dungeons.)</p>
+    <div class="kidtip"><b>KID TIP!</b> Stuck on the last few? Get the Echo Gem (20 tokens) first! Then walk around with it — it glows and beeps near spiders you missed. The closer you get, the stronger it gets. It is like a spider radar!</div>
+  </div>
+
+  <div class="card" id="bottles">
+    <h2>🧴 BOTTLES &amp; UPGRADES</h2>
+    <h3>ALL 5 BOTTLES (the remake has 5 — the old game had 4!)</h3>
+    <p>Bottles hold potions, fairies, bugs, fish, and milk. Fairies in bottles save your life if you fall in a fight!</p>
+    <ul class="check">
+      <li><input type="checkbox"> <b>1. Potion Shop Bottle</b> 👦 NEW in the remake! The first time you walk into Hyrule Castle Town, the Potion Shop is in a panic — a bug got out! Go in and the shop man gives you a bottle to catch the bug. You keep the bottle.</li>
+      <li><input type="checkbox"> <b>2. Cucco Lady's Bottle</b> 👦 In Kakariko Village, find Anju (the Cucco Lady) by the graveyard. Catch her 7 runaway Cuccos and put them back in the pen. She gives you an Empty Bottle!</li>
+      <li><input type="checkbox"> <b>3. Super Cucco Bottle</b> 👦 First wake Talon: get the Weird Egg from Malon at Lon Lon Ranch. Wait for it to hatch into the Wake-Up Cucco, then hold it next to sleeping Talon by the crates at Hyrule Castle. He goes home. Then go to Lon Lon Ranch, pay Talon 10 rupees, and find all 3 Super Cuccos in 30 seconds. Trick: throw all the normal Cuccos behind Talon's desk first — then only the Super Cuccos are left out in the open! You win a bottle of Lon Lon Milk. Drink it (2 sips) to keep the empty bottle.</li>
+      <li><input type="checkbox"> <b>4. Ruto's Letter Bottle</b> 👦 You need this one to finish the story! Win the Diving Game in Zora's Domain, swim through the tunnel to Lake Hylia, and dive to the lake floor to find the bottle with Ruto's Letter. Show it to King Zora. You keep the empty bottle.</li>
+      <li><input type="checkbox"> <b>5. Poe Collector's Bottle</b> 🧑 As a grown-up with Epona and the Bow, ride around Hyrule Field at night and shoot the 10 Big Poes (2 arrows each). Catch their souls in a bottle. Sell them to the Poe Collector in the Ghost Shop in the ruined castle town. In the remake, you get the bottle after 5 Poes (500 points). All 10 Poes (1,000 points) earns a Gold Rupee instead!</li>
+    </ul>
+    <h3>UPGRADES — MAKE LINK STRONGER</h3>
+    <ul>
+      <li><b>Wallets:</b> You start holding 200 rupees. Adult's Wallet (500) = 10 Skulltula tokens. Giant's Wallet (1,000) = 30 Skulltula tokens.</li>
+      <li><b>Quivers (arrows):</b> 30 come with the Bow. Big Quiver (40) = win the Kakariko Shooting Gallery as a grown-up. Biggest Quiver (50) = score 1,500 at Horseback Archery in Gerudo's Fortress.</li>
+      <li><b>Bomb Bags:</b> 20 come from Dodongo's Cavern. Bigger Bomb Bag (30) = stop the rolling Goron in Goron City with a bomb (kid). Biggest Bomb Bag (40) = 2nd win at Bombchu Bowling.</li>
+      <li><b>Magic Meter:</b> Great Fairy of Power, on Death Mountain peak (kid) — bomb the wall by the owl, then play Zelda's Lullaby. You also get a magic Spin Attack!</li>
+      <li><b>Double Magic:</b> Great Fairy of Wisdom, Death Mountain Crater (grown-up) — smash the rocks at the door with the Megaton Hammer, then play Zelda's Lullaby.</li>
+      <li><b>Double Defense:</b> Great Fairy of Courage, outside Ganon's Castle (grown-up) — move the big rock with the Golden Gauntlets. All hits hurt half as much!</li>
+      <li><b>Silver Scale:</b> Win the Diving Game in Zora's Domain (kid). Dive to 6 meters.</li>
+      <li><b>Golden Scale:</b> Fishing Pond at Lake Hylia (grown-up). Catch a huge fish (about 14 pounds!) and show it to the pond man. Dive to 9 meters.</li>
+      <li><b>Goron's Bracelet:</b> Darunia gives it to you after you cheer him up with Saria's Song. Lets you pick up Bomb Flowers.</li>
+      <li><b>Silver Gauntlets:</b> Spirit Temple, kid side. Push huge blocks!</li>
+      <li><b>Golden Gauntlets:</b> Ganon's Castle. Lift the giant rocks!</li>
+    </ul>
+    <div class="kidtip"><b>KID TIP!</b> Great Fairies want rupees for their gifts in the remake (25 to 500 rupees). Bring cash when you visit a fairy fountain!</div>
+  </div>
+
+  <div class="card" id="biggoron">
+    <h2>🗡️ BIGGORON'S SWORD QUEST</h2>
+    <p>The <b>Biggoron's Sword</b> is the strongest sword in the game — twice as strong as the Master Sword, and it never breaks! To get it, you must trade things with lots of people. It is a long trip, so use your warp songs!</p>
+    <p><b>Do this as a grown-up, after you free King Zora from the Red Ice.</b> And get Epona first — some steps are much easier with your horse.</p>
+    <ol class="steps">
+      <li>Get the <b>Pocket Egg</b> from Anju (Cucco Lady) in Kakariko Village.</li>
+      <li>Wait one night (play the Sun's Song). The egg hatches into the <b>Pocket Cucco</b>.</li>
+      <li>Wake Talon with the Cucco — he is asleep in a house in Kakariko. Anju gives you <b>Cojiro</b>, a blue cucco.</li>
+      <li>Show Cojiro to Grog in the Lost Woods. He gives you the <b>Odd Mushroom</b>. Run it to Granny at the Kakariko Potion Shop in <b>under 3 minutes</b>! (Warp songs do not work — run!)</li>
+      <li>Granny makes the <b>Odd Potion</b> from the mushroom.</li>
+      <li>Give the Odd Potion to Fado, the Kokiri girl in the Lost Woods. She gives you the <b>Poacher's Saw</b>.</li>
+      <li>Give the Poacher's Saw to Mutoh, the carpenter boss in Gerudo Valley. He gives you the <b>Broken Goron's Sword</b>.</li>
+      <li>Show the Broken Sword to <b>Biggoron</b> at the top of Death Mountain. He gives you a <b>Prescription</b>.</li>
+      <li>Give the Prescription to <b>King Zora</b> in Zora's Domain. He gives you the <b>Eyeball Frog</b>.</li>
+      <li>Give the Eyeball Frog to the <b>Lake Scientist</b> at the Lakeside Lab. He makes the <b>World's Finest Eye Drops</b>.</li>
+      <li>Give the Eye Drops to Biggoron. He gives you a <b>Claim Check</b>.</li>
+      <li>Wait 3 game days (play the Sun's Song to make time pass). Show Biggoron the Claim Check. He gives you the <b>BIGGORON'S SWORD</b>!</li>
+    </ol>
+    <div class="kidtip"><b>KID TIP!</b> The Odd Mushroom step is timed — 3 minutes! Do not stop to fight or shop. Run straight from the Lost Woods to Kakariko. You can do it!</div>
+  </div>
+
+  <div class="card" id="masks">
+    <h2>🎭 HAPPY MASK SHOP</h2>
+    <p>Masks are for fun — and for rupees! Borrow a mask from the Happy Mask Shop in Hyrule Castle Town, sell it to the right person, and bring the money back. Do them in order!</p>
+    <ol class="steps">
+      <li><b>Keaton Mask:</b> Sell it to the guard at the Death Mountain trail gate.</li>
+      <li><b>Skull Mask:</b> Sell it to the Skull Kid in the Lost Woods (play Saria's Song for him first).</li>
+      <li><b>Spooky Mask:</b> Sell it to the little boy in the Kakariko Graveyard at night.</li>
+      <li><b>Bunny Hood:</b> Sell it to the running man in Hyrule Field at night (he runs around the field).</li>
+      <li><b>Mask of Truth:</b> This one is yours to keep! Wear it to talk to Gossip Stones (the gray stones that say secrets).</li>
+      <li><b>Goron Mask:</b> Sell it to the sleepy Goron in Goron City.</li>
+      <li><b>Zora Mask:</b> Sell it to King Zora.</li>
+      <li><b>Gerudo Mask:</b> Sell it to the Gerudo guard at Gerudo Valley.</li>
+    </ol>
+    <div class="kidtip"><b>KID TIP!</b> Masks are not needed for 100%, but they are fun and they pay well. The Mask of Truth is the best one to keep — Gossip Stones tell you secrets and hints!</div>
+  </div>
+
+  <div class="card" id="checklist">
+    <h2>✅ 100% CHECKLIST</h2>
+    <p>Check off each big job. When every box is checked, you did 100%!</p>
+    <ul class="check">
+      <li><input type="checkbox"> Beat all 9 dungeons (Deku Tree, Dodongo's Cavern, Jabu-Jabu, Forest, Fire, Water, Shadow, Spirit, Ganon's Castle)</li>
+      <li><input type="checkbox"> Got all 3 Spiritual Stones and all 6 Medallions</li>
+      <li><input type="checkbox"> Got all 8 boss Heart Containers (20 hearts total)</li>
+      <li><input type="checkbox"> Found all 36 Heart Pieces</li>
+      <li><input type="checkbox"> Found all 100 Gold Skulltula tokens</li>
+      <li><input type="checkbox"> Learned all 13 songs</li>
+      <li><input type="checkbox"> Got all 5 bottles</li>
+      <li><input type="checkbox"> Got Epona (your horse!)</li>
+      <li><input type="checkbox"> Got the Biggoron's Sword</li>
+      <li><input type="checkbox"> Got the Giant's Wallet (1,000 rupees)</li>
+      <li><input type="checkbox"> Got the Biggest Quiver (50 arrows)</li>
+      <li><input type="checkbox"> Got the Biggest Bomb Bag (40 bombs)</li>
+      <li><input type="checkbox"> Got Double Magic and Double Defense</li>
+      <li><input type="checkbox"> Got the Golden Scale</li>
+      <li><input type="checkbox"> Beat Ganon and watched the ending</li>
+    </ul>
+    <p><b>YOU DID IT!</b> You are a true Hero of Time. Now go play again and find the things you missed — or start a new game and try to beat it faster!</p>
+    <a class="top-link" href="#start">↑ Back to the top</a>
+  </div>
+
+  <div class="footer">
+    <p>Built for the Nee family — a fan-made guide for The Legend of Zelda: Ocarina of Time (Switch 2 remake, Nov 5, 2026).<br>
+    Zelda, Link, and Ocarina of Time belong to Nintendo. This guide is not made by Nintendo.<br>
+    Prices and small details may differ in your game — the steps are what matter. Have fun, hero!</p>
+  </div>
+
+</div>
+
+<script>
+  // Slide-out nav
+  var drawer = document.getElementById('drawer');
+  var overlay = document.getElementById('overlay');
+  function openNav() { drawer.classList.add('open'); overlay.classList.add('show'); }
+  function closeNav() { drawer.classList.remove('open'); overlay.classList.remove('show'); }
+  document.getElementById('menuBtn').addEventListener('click', openNav);
+  document.getElementById('closeBtn').addEventListener('click', closeNav);
+  overlay.addEventListener('click', closeNav);
+  drawer.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+
+  // Checkboxes saved on the tablet (localStorage), with a progress bar
+  var boxes = Array.prototype.slice.call(document.querySelectorAll('ul.check input[type="checkbox"]'));
+  var saved = {};
+  try { saved = JSON.parse(localStorage.getItem('oot-guide-checks') || '{}'); } catch (e) { saved = {}; }
+  function updateProgress() {
+    var done = boxes.filter(function(b){ return b.checked; }).length;
+    var pct = boxes.length ? Math.round(done / boxes.length * 100) : 0;
+    document.getElementById('pct').textContent = pct + '%';
+    document.getElementById('bar').style.width = pct + '%';
+  }
+  boxes.forEach(function(box, i) {
+    if (saved[i]) box.checked = true;
+    box.closest('li').classList.toggle('done', box.checked);
+    box.addEventListener('change', function() {
+      saved[i] = box.checked;
+      try { localStorage.setItem('oot-guide-checks', JSON.stringify(saved)); } catch (e) {}
+      box.closest('li').classList.toggle('done', box.checked);
+      updateProgress();
+    });
+  });
+  updateProgress();
+</script>
+</body>
+</html>
