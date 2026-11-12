@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Heart Pieces &amp; Gold Skulltulas — Full Tables | Ocarina of Time 100% Guide</title>
+<meta name="description" content="Every Heart Piece (36) and every Gold Skulltula (100) in the Ocarina of Time Switch 2 remake, in sortable, filterable tables.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root { --red: #e60012; --yellow: #ffcf00; --blue: #1b4fd8; --green: #0a8a2f; --ink: #141414; --paper: #fff8e6; --card: #ffffff; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Nunito", system-ui, sans-serif; font-size: 17px; line-height: 1.55; }
+  h1, h2, .pixel { font-family: "Press Start 2P", monospace; line-height: 1.5; }
+  h1 { font-size: clamp(18px, 4vw, 28px); }
+  h2 { font-size: clamp(14px, 3.2vw, 20px); color: var(--red); margin: 0 0 10px; text-shadow: 2px 2px 0 var(--yellow); }
+  a { color: var(--blue); }
+  .topbar { position: sticky; top: 0; z-index: 60; background: var(--red); color: #fff; border-bottom: 4px solid var(--ink); display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+  .topbar a.back { background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); border-radius: 8px; font-family: "Press Start 2P", monospace; font-size: 12px; padding: 10px 12px; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); text-decoration: none; }
+  .topbar .title { font-family: "Press Start 2P", monospace; font-size: clamp(11px, 2.6vw, 16px); line-height: 1.4; }
+  .topbar .sub { font-size: 12px; font-weight: 800; opacity: .9; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 14px 80px; }
+  .card { background: var(--card); border: 4px solid var(--ink); border-radius: 12px; padding: 18px 20px; margin: 22px 0; box-shadow: 5px 5px 0 var(--ink); }
+  .kidtip { background: #fff3ad; border: 4px dashed var(--ink); border-radius: 12px; padding: 14px 18px; margin: 16px 0; }
+  .kidtip b { font-family: "Press Start 2P", monospace; font-size: 12px; color: var(--red); }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 14px 0; }
+  .filters input[type="search"], .filters select { font-family: "Nunito", sans-serif; font-size: 16px; font-weight: 700; padding: 9px 12px; border: 3px solid var(--ink); border-radius: 8px; background: #fff; }
+  .filters input[type="search"] { flex: 1 1 220px; }
+  .filters label { font-weight: 900; }
+  .count { font-weight: 900; }
+  .table-scroll { overflow-x: auto; border: 3px solid var(--ink); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; min-width: 760px; font-size: 15.5px; }
+  th, td { border-bottom: 2px solid #eee3c0; padding: 9px 10px; text-align: left; vertical-align: top; }
+  th { background: var(--blue); color: #fff; position: sticky; top: 0; cursor: pointer; white-space: nowrap; user-select: none; }
+  th:hover { background: #123a9e; }
+  th.sorted-asc::after { content: " ▲"; }
+  th.sorted-desc::after { content: " ▼"; }
+  th.nosort { cursor: default; }
+  tbody tr:nth-child(even) { background: #fffaf0; }
+  tbody tr.done { opacity: .55; }
+  tbody tr.done td.how { text-decoration: line-through; }
+  td input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--green); cursor: pointer; }
+  .age { display: inline-block; border: 2px solid var(--ink); border-radius: 6px; padding: 1px 7px; font-size: 13px; font-weight: 900; }
+  .age.kid { background: #bfe8ff; }
+  .age.adult { background: #ffd2d2; }
+  .age.either { background: #d9f7c4; }
+  .footer { text-align: center; color: #666; font-size: 14px; margin-top: 50px; }
+  @media (max-width: 640px) { body { font-size: 16px; } table { font-size: 14px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="back" href="index.html">← GUIDE</a>
+  <div>
+    <div class="title">HEARTS &amp; SKULLTULAS</div>
+    <div class="sub">Every location · Sort it · Filter it · Check it off</div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="card">
+    <h2>HOW TO USE THESE TABLES</h2>
+    <p><b>Tap a column name</b> to sort by it. Use the boxes to <b>search</b> for a place, or <b>filter</b> by age (kid / grown-up) and area. <b>Tick the box</b> when you find one — your checks save on your tablet, and the counter at the top of each table shows how many you have left.</p>
+    <div class="kidtip"><b>KID TIP!</b> Do these as you play, not all at the end! Each chapter of the main guide has a yellow "While you're here" box that tells you which Heart Pieces and Skulltulas to grab right now, while you are already in that place.</div>
+  </div>
+
+  <!-- ============ HEART PIECES ============ -->
+  <div class="card" id="hearts-table">
+    <h2>❤️ ALL 36 HEART PIECES</h2>
+    <p>4 pieces = 1 new heart. All 36 = 9 extra hearts. With the 8 boss Heart Containers, that is 20 hearts — the max!</p>
+    <p class="count">Found: <span id="hearts-count">0 / 36</span></p>
+    <div class="filters">
+      <input type="search" id="hearts-search" placeholder="Search a place… (try “graveyard” or “bean”)">
+      <label>Age <select id="hearts-age"><option value="">All ages</option><option value="kid">Kid 👦</option><option value="adult">Grown-up 🧑</option><option value="either">Either 👦🧑</option></select></label>
+      <label>Area <select id="hearts-area"><option value="">All areas</option></select></label>
+    </div>
+    <div class="table-scroll">
+      <table id="hearts">
+        <thead><tr>
+          <th class="nosort">✓</th>
+          <th data-k="num">#</th>
+          <th data-k="place">Place</th>
+          <th data-k="area">Area</th>
+          <th data-k="age">Age</th>
+          <th data-k="need">You need</th>
+          <th data-k="how">How to get it</th>
+        </tr></thead>
+        <tbody>
+          <tr data-age="kid" data-area="Hyrule Field"><td><input type="checkbox"></td><td>1</td><td>Business Scrub Grotto</td><td>Hyrule Field</td><td><span class="age kid">Kid 👦</span></td><td>Secret word + 100 rupees</td><td class="how">First, as a grown-up, read the Fairy's Thought by a tree in Hyrule Field to learn a secret word. Then as a kid, drop into the round hole by the moat near Castle Town, say the word, and pay 100 rupees.</td></tr>
+          <tr data-age="kid" data-area="Hyrule Field"><td><input type="checkbox"></td><td>2</td><td>Canyon Chest</td><td>Hyrule Field</td><td><span class="age kid">Kid 👦</span></td><td>Fairy's Thought</td><td class="how">First, as a grown-up, read the Fairy's Thought by the chest in the red-rock canyon (west Hyrule Field). Then open the chest as a kid.</td></tr>
+          <tr data-age="kid" data-area="Lon Lon Ranch"><td><input type="checkbox"></td><td>3</td><td>Tower Crates</td><td>Lon Lon Ranch</td><td><span class="age kid">Kid 👦</span></td><td>—</td><td class="how">In the old stone building in the south-west corner, push the crates and crawl through to the round stone room.</td></tr>
+          <tr data-age="kid" data-area="Hyrule Castle Town"><td><input type="checkbox"></td><td>4</td><td>Lost Dog</td><td>Hyrule Castle Town</td><td><span class="age kid">Kid 👦</span></td><td>Night</td><td class="how">At night, find the small white dog in the back alley and lead him to the lady calling his name.</td></tr>
+          <tr data-age="kid" data-area="Hyrule Castle Town"><td><input type="checkbox"></td><td>5</td><td>Bombchu Bowling</td><td>Hyrule Castle Town</td><td><span class="age kid">Kid 👦</span></td><td>10 rupees a game</td><td class="how">Win 3 times in a row! 1st win = Bombchus, 2nd win = Biggest Bomb Bag, 3rd win = Heart Piece.</td></tr>
+          <tr data-age="kid" data-area="Hyrule Castle Town"><td><input type="checkbox"></td><td>6</td><td>Treasure Box Shop</td><td>Hyrule Castle Town</td><td><span class="age kid">Kid 👦</span></td><td>Lens of Truth</td><td class="how">At night, pay 10 rupees, then use the Lens of Truth to pick the key chest in each of 5 rooms. The prize-room chest holds the piece. (First get the Lens of Truth as a grown-up, then come back as a kid.)</td></tr>
+          <tr data-age="kid" data-area="Kakariko Village"><td><input type="checkbox"></td><td>7</td><td>Rooftop Cucco</td><td>Kakariko Village</td><td><span class="age kid">Kid 👦</span></td><td>Cucco</td><td class="how">Carry a Cucco up the stairs past the well, climb the ladder, take a second Cucco and glide onto the purple rooftops. The red-haired man at the far wall gives you the piece.</td></tr>
+          <tr data-age="kid" data-area="Kakariko Village"><td><input type="checkbox"></td><td>8</td><td>Owl Ride Rooftop</td><td>Kakariko Village</td><td><span class="age kid">Kid 👦</span></td><td>Owl ride</td><td class="how">Talk to the big owl at the top of Death Mountain again and take his ride. He drops you on the blue roofs — cross to the red-tiled roof by the cow barn.</td></tr>
+          <tr data-age="adult" data-area="Kakariko Village"><td><input type="checkbox"></td><td>9</td><td>Windmill</td><td>Kakariko Village</td><td><span class="age adult">Grown-up 🧑</span></td><td>—</td><td class="how">Follow Dampé's tunnel out of the Graveyard to the windmill's top floor. The piece sits on the walkway around the central shaft.</td></tr>
+          <tr data-age="either" data-area="Kakariko Village"><td><input type="checkbox"></td><td>10</td><td>House of Skulltula</td><td>Kakariko Village</td><td><span class="age either">Either 👦🧑</span></td><td>50 Skulltula tokens</td><td class="how">Free all 50 of the cursed man's sons (50 Gold Skulltula tokens). He thanks you with a Heart Piece.</td></tr>
+          <tr data-age="kid" data-area="Graveyard"><td><input type="checkbox"></td><td>11</td><td>Dampé's Gravedigging Tour</td><td>Graveyard</td><td><span class="age kid">Kid 👦</span></td><td>Night, 20 rupees</td><td class="how">At night, pay Dampé 20 rupees. The piece is in his 4th dirt pile — grab it before the light fades.</td></tr>
+          <tr data-age="either" data-area="Graveyard"><td><input type="checkbox"></td><td>12</td><td>Tombstone Chest</td><td>Graveyard</td><td><span class="age either">Either 👦🧑</span></td><td>—</td><td class="how">Pull back the bottom tombstone in the right-most row, drop into the hole, and open the chest at the end.</td></tr>
+          <tr data-age="adult" data-area="Graveyard"><td><input type="checkbox"></td><td>13</td><td>Magic Bean Ride</td><td>Graveyard</td><td><span class="age adult">Grown-up 🧑</span></td><td>Magic Bean (plant as kid)</td><td class="how">Plant a Magic Bean in the soft dirt by the Graveyard wall as a kid. As a grown-up, ride the grown plant over the wall to the piece on a block.</td></tr>
+          <tr data-age="adult" data-area="Graveyard"><td><input type="checkbox"></td><td>14</td><td>Dampé's Race</td><td>Graveyard</td><td><span class="age adult">Grown-up 🧑</span></td><td>Hookshot</td><td class="how">With the Hookshot, drop into Dampé's grave, accept his 1-minute race, follow his lantern and finish in time. The chamber chest holds the piece.</td></tr>
+          <tr data-age="kid" data-area="Lost Woods"><td><input type="checkbox"></td><td>15</td><td>Skull Kid Ocarina Game</td><td>Lost Woods</td><td><span class="age kid">Kid 👦</span></td><td>Ocarina</td><td class="how">Stand on the short stump in the Skull Kid's clearing and copy the tunes he plays. Win the 3rd (longest) session.</td></tr>
+          <tr data-age="kid" data-area="Lost Woods"><td><input type="checkbox"></td><td>16</td><td>Skull Kid Saria's Song</td><td>Lost Woods</td><td><span class="age kid">Kid 👦</span></td><td>Saria's Song</td><td class="how">After learning Saria's Song, play it for the second Skull Kid on a stump deeper in the woods. He calls you a friend and gives you the piece.</td></tr>
+          <tr data-age="adult" data-area="Death Mountain Trail"><td><input type="checkbox"></td><td>17</td><td>Magic Bean</td><td>Death Mountain Trail</td><td><span class="age adult">Grown-up 🧑</span></td><td>Magic Bean (plant as kid)</td><td class="how">Plant a Magic Bean in the soft dirt at the top of the trail as a kid. As a grown-up, ride the bean plants up past the rope bridge to a nook in the rock wall.</td></tr>
+          <tr data-age="kid" data-area="Goron City"><td><input type="checkbox"></td><td>18</td><td>Spinning Pot</td><td>Goron City</td><td><span class="age kid">Kid 👦</span></td><td>Bomb or lit Deku Stick</td><td class="how">Throw a Bomb (or a lit Deku Stick) into the big spinning pot on the upper floor to stop it — the piece pops out.</td></tr>
+          <tr data-age="kid" data-area="Death Mountain Crater"><td><input type="checkbox"></td><td>19</td><td>Hidden Nook</td><td>Death Mountain Crater</td><td><span class="age kid">Kid 👦</span></td><td>—</td><td class="how">Climb down the net hanging down the crater wall. The hidden nook at the bottom holds the piece.</td></tr>
+          <tr data-age="kid" data-area="Death Mountain Crater"><td><input type="checkbox"></td><td>20</td><td>Business Scrub</td><td>Death Mountain Crater</td><td><span class="age kid">Kid 👦</span></td><td>100 rupees</td><td class="how">Bring 100 rupees. Knock the Business Scrub out of its plant in the south crater and buy the piece for 100 rupees.</td></tr>
+          <tr data-age="adult" data-area="Death Mountain Crater"><td><input type="checkbox"></td><td>21</td><td>Magic Bean</td><td>Death Mountain Crater</td><td><span class="age adult">Grown-up 🧑</span></td><td>Magic Bean (plant as kid)</td><td class="how">Plant a Magic Bean on the crater floor as a kid (warp in with the Bolero of Fire). As a grown-up, ride the bean plants to the small lava island with the piece.</td></tr>
+          <tr data-age="kid" data-area="Zora River"><td><input type="checkbox"></td><td>22</td><td>Cucco Islets</td><td>Zora River</td><td><span class="age kid">Kid 👦</span></td><td>Cucco</td><td class="how">Carry a Cucco and glide from mossy islet to islet across the river. The chain ends at the piece.</td></tr>
+          <tr data-age="kid" data-area="Zora River"><td><input type="checkbox"></td><td>23</td><td>Cucco Ledge</td><td>Zora River</td><td><span class="age kid">Kid 👦</span></td><td>Cucco</td><td class="how">Carry a Cucco along the cliff path and across the stone bridge, then along the narrow shelf past the stream.</td></tr>
+          <tr data-age="kid" data-area="Zora River"><td><input type="checkbox"></td><td>24</td><td>Frogs, Song of Storms</td><td>Zora River</td><td><span class="age kid">Kid 👦</span></td><td>Song of Storms</td><td class="how">First learn the Song of Storms as a grown-up. Then as a kid, play it for the five frogs on stumps by the waterfall pool — they drop the piece.</td></tr>
+          <tr data-age="kid" data-area="Zora River"><td><input type="checkbox"></td><td>25</td><td>Frog Bug Game</td><td>Zora River</td><td><span class="age kid">Kid 👦</span></td><td>Song of Time</td><td class="how">After the Song of Storms frog piece, play the Song of Time when the frogs ask for another song, then play notes while they catch bugs until they are full.</td></tr>
+          <tr data-age="kid" data-area="Zora's Domain"><td><input type="checkbox"></td><td>26</td><td>Torch Chest</td><td>Zora's Domain</td><td><span class="age kid">Kid 👦</span></td><td>Deku Stick</td><td class="how">Light a Deku Stick on a burning torch and light every unlit torch in the dark corridor. A chest appears at the end.</td></tr>
+          <tr data-age="adult" data-area="Zora's Fountain"><td><input type="checkbox"></td><td>27</td><td>Iceberg</td><td>Zora's Fountain</td><td><span class="age adult">Grown-up 🧑</span></td><td>—</td><td class="how">Hop across the ice blocks and floes to the far ledge.</td></tr>
+          <tr data-age="adult" data-area="Zora's Fountain"><td><input type="checkbox"></td><td>28</td><td>Underwater Cave</td><td>Zora's Fountain</td><td><span class="age adult">Grown-up 🧑</span></td><td>—</td><td class="how">Dive from the open water near the stone pillar into the dark cave under the ice. The piece is at the end.</td></tr>
+          <tr data-age="kid" data-area="Lake Hylia"><td><input type="checkbox"></td><td>29</td><td>Fishing Pond</td><td>Lake Hylia</td><td><span class="age kid">Kid 👦</span></td><td>10 rupees</td><td class="how">Pay 10 rupees for the rod and catch a big fish (about 56 cm). The Fishing-Pond Man gives you the piece. Do not use the sinking lure — those catches do not count.</td></tr>
+          <tr data-age="adult" data-area="Lake Hylia"><td><input type="checkbox"></td><td>30</td><td>Lakeside Lab Diving</td><td>Lake Hylia</td><td><span class="age adult">Grown-up 🧑</span></td><td>Golden Scale</td><td class="how">With the Golden Scale, dive to the grate at the bottom of the lab's deep tank. The scientist hands over the piece when you surface.</td></tr>
+          <tr data-age="adult" data-area="Lake Hylia"><td><input type="checkbox"></td><td>31</td><td>Tower</td><td>Lake Hylia</td><td><span class="age adult">Grown-up 🧑</span></td><td>Magic Bean (plant as kid)</td><td class="how">Plant a Magic Bean beside the Lakeside Laboratory as a kid. As a grown-up, ride the plant across the dry lakebed to the stone tower and climb to the top.</td></tr>
+          <tr data-age="kid" data-area="Gerudo Valley"><td><input type="checkbox"></td><td>32</td><td>Cucco Ledge Chest</td><td>Gerudo Valley</td><td><span class="age kid">Kid 👦</span></td><td>Cucco</td><td class="how">Carry a Cucco and jump across the ravine to the chest in the south-west. (Grown-ups can jump from the northern cliff and Hookshot across instead.)</td></tr>
+          <tr data-age="kid" data-area="Gerudo Valley"><td><input type="checkbox"></td><td>33</td><td>Waterfall Cliff</td><td>Gerudo Valley</td><td><span class="age kid">Kid 👦</span></td><td>—</td><td class="how">Drop into the water on the north side, swim to shore and follow the path behind the waterfall to the end.</td></tr>
+          <tr data-age="adult" data-area="Gerudo's Fortress"><td><input type="checkbox"></td><td>34</td><td>Scarecrow Chest</td><td>Gerudo's Fortress</td><td><span class="age adult">Grown-up 🧑</span></td><td>Scarecrow's Song + Hookshot</td><td class="how">Play your Scarecrow's Song to summon Pierre on the fortress roof, Hookshot/Longshot to him, and open the rooftop chest.</td></tr>
+          <tr data-age="adult" data-area="Gerudo's Fortress"><td><input type="checkbox"></td><td>35</td><td>Horseback Archery</td><td>Gerudo's Fortress</td><td><span class="age adult">Grown-up 🧑</span></td><td>Epona + Fairy Bow</td><td class="how">With Epona and the Fairy Bow, score 1,000+ points at Horseback Archery (30 rupees per try).</td></tr>
+          <tr data-age="adult" data-area="Desert Colossus"><td><input type="checkbox"></td><td>36</td><td>Magic Bean</td><td>Desert Colossus</td><td><span class="age adult">Grown-up 🧑</span></td><td>Magic Bean (plant as kid) + Bow</td><td class="how">Plant a Magic Bean at the Colossus as a kid (warp in with the Requiem of Spirit). As a grown-up, ride the plant up and shoot the piece off the arch in front of the Spirit Temple with your Bow.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ============ GOLD SKULLTULAS ============ -->
+  <div class="card" id="skulls-table">
+    <h2>🕷️ ALL 100 GOLD SKULLTULAS</h2>
+    <p>Kill the gold spider, grab its token, and take tokens to the House of Skulltula in Kakariko Village. Most outside spiders only come out at <b>night</b> (play the Sun's Song). Dungeon spiders are out any time. Some hide in trees — hit or run into the tree! Some hide under soft dirt — drop a bug from a bottle on the patch.</p>
+    <p><b>Prizes:</b> 10 tokens = Adult's Wallet (500 rupees) · 20 = Echo Gem (glows near spiders you missed!) · 30 = Giant's Wallet (1,000 rupees) · 40 = 20 Bombchus · 50 = a Heart Piece · 100 = Gold Rupee (200 rupees, every visit!)</p>
+    <p class="count">Found: <span id="skulls-count">0 / 100</span></p>
+    <div class="filters">
+      <input type="search" id="skulls-search" placeholder="Search a place… (try “deku tree” or “night”)">
+      <label>Age <select id="skulls-age"><option value="">All ages</option><option value="kid">Kid 👦</option><option value="adult">Grown-up 🧑</option><option value="either">Either 👦🧑</option></select></label>
+      <label>Area <select id="skulls-area"><option value="">All areas</option></select></label>
+      <label>How <select id="skulls-how"><option value="">Any way</option><option value="tree">In a tree 🌳</option><option value="soil">Under soft dirt 🐛</option><option value="visible">Just there 👀</option></select></label>
+    </div>
+    <div class="table-scroll">
+      <table id="skulls">
+        <thead><tr>
+          <th class="nosort">✓</th>
+          <th data-k="num">#</th>
+          <th data-k="area">Area</th>
+          <th data-k="age">Age</th>
+          <th data-k="spot">Exact spot</th>
+          <th data-k="how">How to find it</th>
+          <th data-k="time">Time</th>
+          <th data-k="notes">Notes</th>
+        </tr></thead>
+        <tbody id="skulls-body">
+          <!-- filled by script from SKULLS data -->
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:14px;color:#555;margin-top:10px;">One honest note: two guides disagree about Hyrule Field — this table follows the remake guide (a kid grotto token), but some guides list an adult tree token instead. Both agree there are 3 in Hyrule Field.</p>
+  </div>
+
+  <div class="footer">
+    <p>Built for the Nee family — a fan-made guide for The Legend of Zelda: Ocarina of Time (Switch 2 remake, Nov 5, 2026).<br>
+    Zelda, Link, and Ocarina of Time belong to Nintendo. This guide is not made by Nintendo.<br>
+    <a href="index.html">← Back to the main walkthrough</a></p>
+  </div>
+
+</div>
+
+<script>
+  // ---------- Skulltula data (verified against the Switch 2 remake guides) ----------
+  // [number, area, age, exact spot, how to find it, how-filter, time, notes]
+  var SKULLS = [
+    [1, "Great Deku Tree", "kid", "Wall by the alcove, 3F", "Hit it with your sword", "visible", "Any time", "On 3F, hop the stone platforms. Hit the normal spider first, then the gold one in the alcove."],
+    [2, "Great Deku Tree", "kid", "Vine wall, B1 water room", "Shoot it with the Slingshot", "visible", "Any time", "After the drop to the basement, swim to the vine wall, shoot it, and climb up."],
+    [3, "Great Deku Tree", "kid", "Web-covered barred grate, B1", "Shoot it with the Slingshot", "visible", "Any time", "Shoot it — the token falls behind the gate. Pick it up there."],
+    [4, "Great Deku Tree", "kid", "Vine wall in the cave past the burned webs", "Shoot it with the Slingshot", "visible", "Any time", "Shoot the guarding spider first, then climb the wall."],
+    [5, "Kokiri Forest", "kid", "Huge tree trunk by the small house", "Hit it with your sword", "visible", "Night", "Play the Sun's Song for night, then climb the trunk."],
+    [6, "Kokiri Forest", "kid", "Soft soil behind the Kokiri Shop, near the stream", "Drop a bug on the soft soil", "soil", "Any time", "Bugs are sold by the second Business Scrub in the Lost Woods."],
+    [7, "Kokiri Forest", "adult", "Huge tree behind the House of the Twins", "Hookshot it", "visible", "Night", ""],
+    [8, "Lost Woods", "kid", "Soft soil near the first Business Scrub", "Drop a bug on the soft soil", "soil", "Any time", ""],
+    [9, "Lost Woods", "kid", "Soft soil by the second Business Scrub", "Drop a bug on the soft soil", "soil", "Any time", ""],
+    [10, "Lost Woods", "adult", "Ledge above the bean plant, past the second scrub", "Hit it with your sword", "visible", "Night", "Plant a Magic Bean in the second scrub's soft soil as a kid, then ride the plant up as a grown-up."],
+    [11, "Sacred Grove", "adult", "High on the rock wall at the dead end of the maze", "Hookshot it", "visible", "Night", "Cross the maze past the Moblin guards."],
+    [12, "Hyrule Field", "kid", "Lone skinny tree west of the Kokiri Forest entrance", "Roll into the tree", "tree", "Any time", ""],
+    [13, "Hyrule Field", "kid", "Hidden grotto in the woods southwest of Lon Lon Ranch", "Shoot it with the Boomerang", "visible", "Any time", "Bomb the grotto open. Kill the big spider inside first, then Boomerang the gold one on the cave wall."],
+    [14, "Hyrule Field", "adult", "Grotto by the marsh pond, southeast of Lon Lon Ranch", "Hit it with your sword", "visible", "Any time", "First visit as a kid: bomb the grotto open and beat the normal spider inside. Come back as a grown-up, drop in, and break the wooden crate by the wall."],
+    [15, "Lon Lon Ranch", "kid", "Tree by the stone wall near the silo", "Roll into the tree", "tree", "Day", ""],
+    [16, "Lon Lon Ranch", "kid", "Wooden wall of the ranch house by the entrance arch", "Shoot it with the Boomerang", "visible", "Night", ""],
+    [17, "Lon Lon Ranch", "kid", "Vines high in the stone tower (storeroom)", "Shoot it with the Boomerang", "visible", "Night", "The token lands among the stacked crates."],
+    [18, "Hyrule Castle Town", "kid", "Crate by the steps in the guard house storeroom", "Roll into the crate", "visible", "Any time", "Smash the pots first for rupees, then roll into the crate."],
+    [19, "Hyrule Castle", "kid", "Palm tree on the lawn at the foot of the castle wall", "Roll into the tree", "tree", "Day", ""],
+    [20, "Hyrule Castle", "kid", "Under the tall tree by the iron fence, near where Talon sleeps", "Shoot it with the Boomerang", "visible", "Any time", "Learn the Song of Storms as a grown-up first, then play it as a kid by the tree to open the hole. Bomb the cracked rock wall inside the cave."],
+    [21, "Ganondorf's Castle", "adult", "Stonework above the ruined archway on the road to the castle", "Hookshot it", "visible", "Any time", "Turn around after you pass under the arch."],
+    [22, "Kakariko Village", "kid", "Brick wall of the unfinished house near the lamp", "Shoot it with the Slingshot", "visible", "Night", "Climb the wooden walkways around the house."],
+    [23, "Kakariko Village", "kid", "Wall to the left of the blue door of the House of Skulltula", "Hit it with your sword", "visible", "Night", ""],
+    [24, "Kakariko Village", "kid", "Tall tree in the village square, by the Master Craftsman's Son", "Roll into the tree", "tree", "Night", ""],
+    [25, "Kakariko Village", "kid", "Top of the windmill ladder", "Shoot it with the Slingshot", "visible", "Night", "Shoot it, then climb up."],
+    [26, "Kakariko Village", "kid", "Plaster wall under the eaves of a house beside a red door", "Hit it with your sword", "visible", "Night", ""],
+    [27, "Kakariko Village", "adult", "High on the wall above the blue-tiled roof of Impa's house", "Shoot it with the Longshot", "visible", "Night", "Climb onto the roof."],
+    [28, "Graveyard", "kid", "Soft soil by the stone wall", "Drop a bug on the soft soil", "soil", "Any time", "Catch a bug crawling in the long grass."],
+    [29, "Graveyard", "kid", "Wall behind Dampé's wooden hut", "Shoot it with the Boomerang", "visible", "Night", ""],
+    [30, "Death Mountain Trail", "kid", "Soft soil in the small red-rock cave along the ledge path", "Drop a bug on the soft soil", "soil", "Any time", ""],
+    [31, "Death Mountain Trail", "kid", "Cave wall in the small cave behind a cracked rock near the upper gate", "Hit it with your sword", "visible", "Any time", "Bomb the cracked rock to open the cave."],
+    [32, "Death Mountain Trail", "adult", "Rock wall in the cave past the net slope below Biggoron's ledge", "Hit it with the Megaton Hammer", "visible", "Any time", ""],
+    [33, "Death Mountain Trail", "adult", "Cave wall in the dark tunnel toward Goron City", "Hit it with the Megaton Hammer", "visible", "Night", ""],
+    [34, "Goron City", "kid", "Wooden crate in the corner of the side cave past the chest", "Smash the crate", "visible", "Any time", "Bomb the cracked wall to get in. Smash the crate, then beat the gold spider with your sword."],
+    [35, "Goron City", "adult", "High on the cave wall beside the metal mesh walkway", "Shoot it with the Bow", "visible", "Any time", ""],
+    [36, "Death Mountain Crater", "kid", "Rock wall in the first alcove on the right, by the golden pot", "Hit it with your sword", "visible", "Any time", ""],
+    [37, "Death Mountain Crater", "kid", "Soft soil on the lava rim of the crater floor", "Drop a bug on the soft soil", "soil", "Any time", "Learn the Bolero of Fire as a grown-up so a kid can warp down to the crater floor."],
+    [38, "Zora River", "kid", "Soft soil patch by the Bean Seller", "Drop a bug on the soft soil", "soil", "Any time", ""],
+    [39, "Zora River", "kid", "Rock under the overhang beside the river, below the Triforce crest stone", "Hit it with your sword", "visible", "Night", "Climb the river stairs to the crest stone, follow the grassy ledge, climb down the vines."],
+    [40, "Zora River", "adult", "Dark cliff above the water, past the iron gate on the cliff path", "Hookshot it", "visible", "Night", "Cross the leaf pads first."],
+    [41, "Zora River", "adult", "Rock wall of the mossy overlook beside a stone footbridge", "Shoot it with the Longshot", "visible", "Night", ""],
+    [42, "Zora Domain", "adult", "Pillar beside the stonework at the frozen bridge", "Hookshot it", "visible", "Night", "The Domain is frozen as a grown-up."],
+    [43, "Zora Fountain", "kid", "Big tree in the southeast corner beside the path", "Roll into the tree", "tree", "Night", ""],
+    [44, "Zora Fountain", "kid", "Mossy cliff wall above the slanted stone ruin southwest of Jabu-Jabu", "Shoot it with the Boomerang", "visible", "Night", "Climb onto the ruin and lock on."],
+    [45, "Zora Fountain", "adult", "High on the dark wall of the second cave of the snowfield", "Shoot it with the Longshot", "visible", "Any time", "You need the Silver Gauntlets (won in the Spirit Temple as a kid) to lift the rock blocking the cave. The Lens of Truth helps with invisible enemies in the first cave."],
+    [46, "Lake Hylia", "kid", "Loose soil in front of the barrels by the lakeside house wall", "Drop a bug on the soft soil", "soil", "Any time", ""],
+    [47, "Lake Hylia", "kid", "Stone tower wall of the Lakeside Laboratory, next to the pipe", "Shoot it with the Boomerang", "visible", "Night", "The token falls onto the wooden pier."],
+    [48, "Lake Hylia", "kid", "Mossy wall in the dark grotto through the low stone doorway on the far shore", "Hit it with your sword", "visible", "Any time", "Swim to the far bank from the warp pad."],
+    [49, "Lake Hylia", "adult", "Cellar wall above you in the flooded cellar under the laboratory floor", "Hookshot it", "visible", "Any time", "Wear the Iron Boots to sink to the bottom."],
+    [50, "Lake Hylia", "adult", "Hollow in the trunk of the big tree on the cliff above the lake", "Hit it with your sword", "visible", "Night", "Climb the vines up the tree."],
+    [51, "Gerudo Valley", "kid", "Loose soil on the rocky shelf in the dark cave beside the waterfall", "Drop a bug on the soft soil", "soil", "Any time", "Pick up a Cucco on the pasture ledge, glide down into the cave, and swim out through the pool."],
+    [52, "Gerudo Valley", "kid", "Dark stone wall by the river channel, past the plank path at the foot of the waterfall", "Shoot it with the Boomerang", "visible", "Night", ""],
+    [53, "Gerudo Valley", "adult", "Rock arch over the canyon path", "Hookshot it", "visible", "Night", "Ride in on Epona and get off near the rocks."],
+    [54, "Gerudo Valley", "adult", "Stone wall of the ruined building beside the camp", "Shoot it with the Longshot", "visible", "Night", ""],
+    [55, "Gerudo Fortress", "adult", "High on the wall of a rooftop tower", "Shoot it with the Longshot", "visible", "Night", "Climb the ladder by the stairs, cross the rooftops, and climb the next ladder."],
+    [56, "Gerudo Fortress", "adult", "Target pole near the fence at the horseback archery range", "Shoot it with the Longshot", "visible", "Night", ""],
+    [57, "Mirage Desert", "adult", "Wall above the torch in the red-lit stone room down the ladder in the open pit", "Shoot it with the Longshot", "visible", "Any time", ""],
+    [58, "Desert Colossus", "kid", "Soft soil in the corner by the temple wall", "Drop a bug on the soft soil", "soil", "Any time", "Learn the Requiem of Spirit as a grown-up to warp a kid here. Plant a Magic Bean in the hole afterward."],
+    [59, "Desert Colossus", "adult", "High cliff wall beyond the sanctum, across the wide sand", "Shoot it with the Longshot", "visible", "Night", ""],
+    [60, "Desert Colossus", "adult", "Top edge of a flat rock pillar across the sand", "Shoot it with the Longshot", "visible", "Night", "Ride the bean plant (planted as a kid in the Colossus soft soil) and shoot while standing on the leaf."],
+    [61, "Dodongo's Cavern", "kid", "Net wall above the stone steps (past the cracked stone block)", "Shoot it with the Slingshot", "visible", "Any time", "You need the Goron's Bracelet to carry a bomb flower and blast the block."],
+    [62, "Dodongo's Cavern", "kid", "Glowing spot on the wall of the small cave in the southeast corner of 1F", "Shoot it with the Slingshot", "visible", "Any time", ""],
+    [63, "Dodongo's Cavern", "kid", "Big glowing rock among the Dodongos in the 2F cave", "Bomb the rock to reveal it", "visible", "Any time", "Throw bombs at the Dodongos first, then break the glowing rock — the token pops out."],
+    [64, "Dodongo's Cavern", "kid", "Back wall of the side room behind the cracked wall in the block room (1F)", "Hit it with your sword", "visible", "Any time", "Bomb the cracked wall after pushing the block. Clear the Armos statue and three Baby Dodongos first."],
+    [65, "Dodongo's Cavern", "adult", "Rock wall at the back of the small cave above the scarecrow, on the back route", "Hookshot it", "visible", "Any time", "Play your Scarecrow's Song, then Hookshot to the scarecrow to be pulled up. Teach Bonooru your tune as a kid first."],
+    [66, "Jabu-Jabu's Belly", "kid", "Ledge at the top of the thick vine wall, B1 (room of three pots)", "Shoot it with the Slingshot", "visible", "Any time", "Shoot from the water near the yellow shell pad, climb the vines, and jump off at the top."],
+    [67, "Jabu-Jabu's Belly", "kid", "Ceiling of the B1 cave along the purple ridge", "Shoot it with the Boomerang", "visible", "Any time", ""],
+    [68, "Jabu-Jabu's Belly", "kid", "Dark archway further along the same B1 ridge", "Shoot it with the Boomerang", "visible", "Any time", ""],
+    [69, "Jabu-Jabu's Belly", "kid", "Tentacle pillar wrapped in vines, middle of the 2F passage", "Shoot it with the Boomerang", "visible", "Any time", ""],
+    [70, "Forest Temple", "adult", "Vines near the top of the vine wall in the first room", "Hookshot it", "visible", "Any time", "Step onto the nearby thick branch."],
+    [71, "Forest Temple", "adult", "High on the wall of the wood-paneled landing above the checkered main hall", "Hookshot it", "visible", "Any time", ""],
+    [72, "Forest Temple", "adult", "High on the ivy in the ivy room (after the pool room targets)", "Shoot it with the Bow, then Hookshot it", "visible", "Any time", ""],
+    [73, "Forest Temple", "adult", "Behind the web in the dusty room on B2", "Hookshot it", "visible", "Any time", "Burn the web with Din's Fire first."],
+    [74, "Forest Temple", "adult", "Perch beside the flower planter in the courtyard, across the gap", "Hookshot to the scarecrow", "visible", "Any time", "Play your Scarecrow's Song on the ledge, then Hookshot to the scarecrow perch."],
+    [75, "Fire Temple", "adult", "Rock wall beyond the stone idol in the tiled room", "Bomb the idol to reveal it", "visible", "Any time", "Play the Song of Time to move the block. Wear the Goron Tunic."],
+    [76, "Fire Temple", "adult", "Rubble wall on 3F", "Bomb it to reveal the spider", "visible", "Any time", "The gold spider bursts out in a shower of sparks!"],
+    [77, "Fire Temple", "adult", "Boulder pile in the room", "Smash it with the Megaton Hammer", "visible", "Any time", ""],
+    [78, "Fire Temple", "adult", "Wall of the 5F corridor", "Hookshot it", "visible", "Any time", "Play your Scarecrow's Song, Hookshot the scarecrow to reach the upper ledge, then climb the mesh walls to 5F."],
+    [79, "Fire Temple", "adult", "Wall at the edge of the lava in the lava room next to the 5F corridor", "Hookshot it", "visible", "Any time", "Play your Scarecrow's Song, then Hookshot to the scarecrow."],
+    [80, "Ice Cavern", "adult", "Ice wall in the cavern past the gates (frozen ruins)", "Hookshot it", "visible", "Any time", ""],
+    [81, "Ice Cavern", "adult", "Wall of the ice walkway", "Hookshot it", "visible", "Any time", ""],
+    [82, "Ice Cavern", "adult", "High on the ice wall past the pink ice block, beyond the Compass chest", "Hookshot it", "visible", "Any time", ""],
+    [83, "Water Temple", "adult", "Glowing ahead in a dark cave section on 2F", "Shoot it with the Longshot", "visible", "Any time", "Follow the water tunnel past the green ring above the barred cage."],
+    [84, "Water Temple", "adult", "Vaulted ceiling of the stone chamber with the Triforce door and green glyphs, 1F", "Shoot it with the Longshot", "visible", "Any time", ""],
+    [85, "Water Temple", "adult", "Behind the falling water on the walls of the golden corridor away from the Boss Key room", "Shoot it with the Longshot", "visible", "Any time", ""],
+    [86, "Water Temple", "adult", "High in the flooded hall on B1 near the end", "Shoot it with the Longshot", "visible", "Any time", "Wear the Iron Boots."],
+    [87, "Water Temple", "adult", "Stained-glass wall in the room with the Shell Blades, 2F", "Shoot it with the Bow", "visible", "Any time", "Smash the cracked stone wall with the Megaton Hammer first."],
+    [88, "Bottom of the Well", "kid", "Wall of the torch-lit room", "Shoot it with the Boomerang", "visible", "Any time", "Play the Song of Storms as a kid to drain the well and get in (learn it as a grown-up first)."],
+    [89, "Bottom of the Well", "kid", "Wall at the far end of the narrow dark corridor", "Shoot it with the Boomerang", "visible", "Any time", "You can only see it through the Lens of Truth."],
+    [90, "Bottom of the Well", "kid", "Wall above the shelves in the candle-lit room lined with skull niches", "Shoot it with the Boomerang", "visible", "Any time", "You can only see it through the Lens of Truth."],
+    [91, "Shadow Temple", "adult", "Above the chest in the room behind the eye door (past the scrub)", "Hit it with your sword", "visible", "Any time", ""],
+    [92, "Shadow Temple", "adult", "Wall beside the bars in the corridor with a barred gate", "Shoot it with the Longshot", "visible", "Any time", ""],
+    [93, "Shadow Temple", "adult", "Behind the bars at the end of the dark narrow corridor with fans in the ceiling", "Shoot it with the Longshot", "visible", "Any time", "Shoot through the gate."],
+    [94, "Shadow Temple", "adult", "Corner inside the cage on the walkways", "Longshot to the scarecrow", "visible", "Any time", "Play your Scarecrow's Song, then Longshot the small scarecrow target to be pulled onto the cage."],
+    [95, "Shadow Temple", "adult", "Golden plaque on the floor of the round wooden platform below the cauldron balcony", "Slash it with your sword", "visible", "Any time", ""],
+    [96, "Spirit Temple", "kid", "Mesh wall beside the grate floor, 1F mesh room", "Shoot it with the Boomerang", "visible", "Any time", "Learn the Requiem of Spirit as a grown-up to warp a kid here."],
+    [97, "Spirit Temple", "kid", "Ceiling of the stone passage above the red-carpet stairs on 3F", "Shoot it with the Boomerang", "visible", "Any time", "Learn the Requiem of Spirit as a grown-up to warp a kid here."],
+    [98, "Spirit Temple", "kid", "Corner of the dark carved-wall corridor on 2F, right after the boulder hall", "Hit it with your sword", "visible", "Any time", "Learn the Requiem of Spirit as a grown-up to warp a kid here."],
+    [99, "Spirit Temple", "adult", "Wall of the alcove past the Song of Time blue door in the boulder halls", "Hit it with your sword", "visible", "Any time", "Play the Song of Time to open the blue door. You need the Silver Gauntlets (won on the kid side) to open the grown-up side."],
+    [100, "Spirit Temple", "adult", "Niche on the 3F ledge", "Longshot to the scarecrow", "visible", "Any time", "Play your Scarecrow's Song, then Longshot to the scarecrow. You need the Silver Gauntlets (kid side) to open the grown-up side."]
+  ];
+  function renderSkulls() {
+    var tbody = document.getElementById('skulls-body');
+    SKULLS.forEach(function(s){
+      var tr = document.createElement('tr');
+      tr.setAttribute('data-age', s[2]);
+      tr.setAttribute('data-area', s[1]);
+      tr.setAttribute('data-how', s[5]);
+      var ageLabel = s[2] === 'kid' ? 'Kid 👦' : (s[2] === 'adult' ? 'Grown-up 🧑' : 'Either 👦🧑');
+      var ageClass = s[2] === 'kid' ? 'kid' : (s[2] === 'adult' ? 'adult' : 'either');
+      tr.innerHTML = '<td><input type="checkbox"></td><td>' + s[0] + '</td><td>' + s[1] + '</td><td><span class="age ' + ageClass + '">' + ageLabel + '</span></td><td class="how">' + s[3] + '</td><td>' + s[4] + '</td><td>' + s[6] + '</td><td>' + s[7] + '</td>';
+      tbody.appendChild(tr);
+    });
+  }
+</script>
+<script>
+  // ---------- Shared table tools: sort, filter, checkboxes with localStorage ----------
+  function setupTable(cfg) {
+    var table = document.getElementById(cfg.id);
+    var tbody = table.querySelector('tbody');
+    var rows = Array.prototype.slice.call(tbody.querySelectorAll('tr'));
+    var search = document.getElementById(cfg.searchId);
+    var ageSel = document.getElementById(cfg.ageId);
+    var areaSel = document.getElementById(cfg.areaId);
+    var howSel = cfg.howId ? document.getElementById(cfg.howId) : null;
+    var countEl = document.getElementById(cfg.countId);
+    var storeKey = cfg.storeKey;
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem(storeKey) || '{}'); } catch (e) { saved = {}; }
+
+    // Fill the Area dropdown from the rows
+    var areas = [];
+    rows.forEach(function(r){ var a = r.getAttribute('data-area'); if (a && areas.indexOf(a) === -1) areas.push(a); });
+    areas.sort().forEach(function(a){ var o = document.createElement('option'); o.value = a; o.textContent = a; areaSel.appendChild(o); });
+
+    function rowText(r){ return r.textContent.toLowerCase(); }
+    function applyFilter() {
+      var q = (search.value || '').toLowerCase();
+      var age = ageSel.value, area = areaSel.value, how = howSel ? howSel.value : '';
+      var shown = 0;
+      rows.forEach(function(r){
+        var ok = (!q || rowText(r).indexOf(q) !== -1)
+          && (!age || r.getAttribute('data-age') === age)
+          && (!area || r.getAttribute('data-area') === area)
+          && (!how || r.getAttribute('data-how') === how);
+        r.style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+      return shown;
+    }
+    function updateCount() {
+      var done = rows.filter(function(r){ return r.querySelector('input[type="checkbox"]').checked; }).length;
+      countEl.textContent = done + ' / ' + rows.length;
+    }
+    rows.forEach(function(r, i){
+      var box = r.querySelector('input[type="checkbox"]');
+      var key = 'r' + i;
+      if (saved[key]) box.checked = true;
+      r.classList.toggle('done', box.checked);
+      box.addEventListener('change', function(){
+        saved[key] = box.checked;
+        try { localStorage.setItem(storeKey, JSON.stringify(saved)); } catch (e) {}
+        r.classList.toggle('done', box.checked);
+        updateCount();
+      });
+    });
+    [search, ageSel, areaSel, howSel].forEach(function(el){ if (el) el.addEventListener('input', applyFilter); });
+
+    // Sorting: click a header to sort that column
+    var sortKey = null, sortDir = 1;
+    table.querySelectorAll('th[data-k]').forEach(function(th){
+      th.addEventListener('click', function(){
+        var k = th.getAttribute('data-k');
+        if (sortKey === k) { sortDir = -sortDir; } else { sortKey = k; sortDir = 1; }
+        table.querySelectorAll('th').forEach(function(h){ h.classList.remove('sorted-asc','sorted-desc'); });
+        th.classList.add(sortDir === 1 ? 'sorted-asc' : 'sorted-desc');
+        var idx = Array.prototype.indexOf.call(th.parentNode.children, th);
+        rows.sort(function(a, b){
+          var av = a.children[idx].textContent.trim(), bv = b.children[idx].textContent.trim();
+          var an = parseFloat(av), bn = parseFloat(bv);
+          if (!isNaN(an) && !isNaN(bn)) return (an - bn) * sortDir;
+          return av.localeCompare(bv) * sortDir;
+        });
+        rows.forEach(function(r){ tbody.appendChild(r); });
+        applyFilter();
+      });
+    });
+    applyFilter();
+    updateCount();
+  }
+
+  setupTable({ id: 'hearts', searchId: 'hearts-search', ageId: 'hearts-age', areaId: 'hearts-area', countId: 'hearts-count', storeKey: 'oot-hearts-checks' });
+  renderSkulls();
+  setupTable({ id: 'skulls', searchId: 'skulls-search', ageId: 'skulls-age', areaId: 'skulls-area', howId: 'skulls-how', countId: 'skulls-count', storeKey: 'oot-skulls-checks' });
+</script>
+</body>
+</html>
