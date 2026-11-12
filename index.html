@@ -79,10 +79,17 @@
   .progress .bar { height: 16px; background: #eee; border: 2px solid var(--ink); border-radius: 999px; overflow: hidden; margin-top: 6px; }
   .progress .bar i { display: block; height: 100%; background: var(--green); width: 0%; }
   .top-link { display: inline-block; margin-top: 14px; font-weight: 800; }
-  .video { margin: 18px 0; }
+  .watch-btn { background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); border-radius: 10px; font-family: "Nunito", sans-serif; font-weight: 900; font-size: 17px; padding: 12px 16px; cursor: pointer; box-shadow: 4px 4px 0 var(--ink); margin: 14px 0 4px; display: inline-block; }
+  .watch-btn:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+  .modal { position: fixed; inset: 0; background: rgba(0,0,0,.78); z-index: 100; display: none; align-items: center; justify-content: center; padding: 14px; }
+  .modal.open { display: flex; }
+  .modal-box { background: #fff; border: 4px solid var(--ink); border-radius: 14px; width: min(880px, 100%); box-shadow: 8px 8px 0 var(--ink); overflow: hidden; }
+  .modal-head { background: var(--red); color: #fff; padding: 12px 14px; display: flex; justify-content: space-between; align-items: center; gap: 10px; border-bottom: 4px solid var(--ink); }
+  .modal-head span { font-family: "Press Start 2P", monospace; font-size: 12px; line-height: 1.5; }
+  .close-btn { background: var(--yellow); color: var(--ink); border: 3px solid var(--ink); border-radius: 8px; font-family: "Press Start 2P", monospace; font-size: 14px; padding: 8px 12px; cursor: pointer; box-shadow: 3px 3px 0 var(--ink); flex: none; }
+  .modal-note { padding: 10px 16px 14px; font-size: 14px; color: #555; margin: 0; }
   .vid-wrap { position: relative; padding-bottom: 56.25%; height: 0; border: 3px solid var(--ink); border-radius: 8px; overflow: hidden; background: #000; }
   .vid-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-  .video .cap { font-size: 14px; color: #555; text-align: center; margin: 6px 0 0; }
   .footer { text-align: center; color: #666; font-size: 14px; margin-top: 50px; }
   @media (max-width: 640px) {
     body { font-size: 17px; }
@@ -145,7 +152,7 @@
 <div class="wrap">
 
   <div class="hero">
-    <img src="assets/hero-link.webp" alt="Link playing the Ocarina of Time">
+    <img src="assets/zelda-cover.jpg" alt="Princess Zelda, with Link riding Epona in the background">
     <div class="hero-text">
       <h1>THE LEGEND OF ZELDA: OCARINA OF TIME</h1>
       <p>The full walkthrough for the Nintendo Switch 2 remake — every dungeon, every secret, and every last thing you need for 100%.</p>
@@ -193,20 +200,14 @@
       <li><b>Put away (B):</b> Press B to put your sword away.</li>
     </ul>
     <div class="kidtip"><b>KID TIP!</b> Save a lot! Open the pause menu and save any time you are outside a dungeon. If you lose a big fight, you will be glad you saved. Also: some shop prices changed in the remake. If a price in this guide looks different in your game, trust your game!</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/NdbCLDEaUbU" title="Ocarina of Time Remake — Opening Cutscene" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Opening Cutscene</b> by timforsyth15 (~5 min) — the story begins! <a href="https://www.youtube.com/watch?v=NdbCLDEaUbU" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/NLIqrxADdII" title="Ocarina of Time Remake — Full Game 100% Walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Full Game 100% Walkthrough</b> by RetroArchive (~18 hours, no talking) — the whole game, start to finish. Jump to any part you need! <a href="https://www.youtube.com/watch?v=NLIqrxADdII" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
-    <p>🎬 Want to watch the whole story like a movie? Here is <a href="https://www.youtube.com/watch?v=U_mxnC3E6Cg" target="_blank" rel="noopener">every cutscene in one video</a> (no talking, remake footage).</p>
+    <button class="watch-btn" onclick="openVideo(0, 'Intro and Kokiri Forest')">▶ Watch this part — from the start — about 18 hours</button>
   </div>
 
   <div class="card" id="songs">
     <h2>ALL 13 SONGS</h2>
     <p>You play songs on your ocarina. Each song does magic. Learn them all for 100%! Hold ZL to open your songbook and see the songs you know.</p>
+    <img src="assets/hero-link.webp" alt="Link playing the Ocarina of Time">
+    <p class="cap">Link plays the ocarina — every song is magic!</p>
     <ul class="check">
       <li><input type="checkbox"> <b>Zelda's Lullaby</b> — Zelda teaches you at Hyrule Castle. Opens magic doors and changes the Water Temple water.</li>
       <li><input type="checkbox"> <b>Epona's Song</b> — Malon teaches you at Lon Lon Ranch. Calls your horse, Epona.</li>
@@ -244,6 +245,7 @@
     • <b>Skulltulas:</b> 2 kid Skulltulas hide in Kokiri Forest. Check the trees at night!<br>
     • <b>On your way to Saria:</b> In the Lost Woods, play the ocarina game with the Skull Kid (Heart Piece #15). After you learn Saria's Song, play it for the second Skull Kid (Heart Piece #16).<br>
     • <b>Magic Beans:</b> Later, buy Magic Beans from the bean seller in Zora River. Plant them in soft dirt as a kid — you ride the big plants as a grown-up!</div>
+    <button class="watch-btn" onclick="openVideo(0, 'Intro and Kokiri Forest')">▶ Watch this part — 0:00:00</button>
   </div>
 
   <div class="card" id="deku">
@@ -263,6 +265,7 @@
     <div class="getbox"><b>YOU GET:</b> Fairy Slingshot, Heart Container, Kokiri's Emerald (the green stone)</div>
     <div class="here"><b>WHILE YOU'RE HERE! ⭐</b><br>
     • <b>Skulltulas:</b> 4 gold spiders hide inside the Deku Tree. Grab them now while you are here — check the walls and the high rooms!</div>
+    <button class="watch-btn" onclick="openVideo(1158, 'Inside the Deku Tree')">▶ Watch this part — 0:19:18</button>
     <div class="kidtip"><b>KID TIP!</b> Deku Sticks break fast! Light one, then run to the web right away. If it goes out, light a new one.</div>
   </div>
 
@@ -288,10 +291,7 @@
     • <b>Bottle #1:</b> The Potion Shop gives you a bottle the first time you walk into town!<br>
     • <b>Masks:</b> The Happy Mask Shop is open. Borrow the Keaton Mask and sell it to the guard at Death Mountain.<br>
     • <b>Skulltula:</b> 1 in Castle Town at night.</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/jxLL5kAIK9Q" title="Meeting Princess Zelda — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Meeting Princess Zelda</b> by Pretty Angel Plays (remake footage — the meeting happens partway through this episode). <a href="https://www.youtube.com/watch?v=jxLL5kAIK9Q" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(2607, 'Hyrule Castle, Lon Lon Ranch and Kakariko Village')">▶ Watch this part — 0:43:27</button>
   </div>
 
   <div class="card" id="kakariko">
@@ -314,6 +314,7 @@
     • <b>Plant a Magic Bean NOW</b> in the soft dirt by the graveyard wall — as a grown-up you ride it to Heart Piece #13!<br>
     • <b>Bottle #2:</b> Catch Anju's 7 runaway Cuccos and put them back in the pen.<br>
     • <b>Skulltulas:</b> 6 in the village, 2 in the graveyard. (The 3 in the Bottom of the Well need the Song of Storms — learn it as a grown-up, then come back as a kid!)</div>
+    <button class="watch-btn" onclick="openVideo(2607, 'Hyrule Castle, Lon Lon Ranch and Kakariko Village')">▶ Watch this part — 0:43:27</button>
   </div>
 
   <div class="card" id="dodongo">
@@ -336,6 +337,7 @@
     • <b>Plant Magic Beans NOW:</b> one at the top of Death Mountain Trail (#17) and one on the crater floor (#21). You ride them as a grown-up.<br>
     • <b>Heart Pieces #19 and #20:</b> In the crater — climb down the net, and buy one from the Business Scrub for 100 rupees.<br>
     • <b>Skulltulas:</b> 5 in Dodongo's Cavern (4 as a kid, 1 as a grown-up).</div>
+    <button class="watch-btn" onclick="openVideo(10677, 'Dodongo&rsquo;s Cavern')">▶ Watch this part — 2:57:57</button>
   </div>
 
   <div class="card" id="jabu">
@@ -361,10 +363,7 @@
     • <b>Plant a Magic Bean NOW</b> by the Lakeside Lab for Heart Piece #31 (grown-up).<br>
     • <b>Skulltulas:</b> 4 inside Jabu-Jabu, 4 along Zora River, 3 at Zora's Fountain, 5 at Lake Hylia.<br>
     • <b>Bottle #4:</b> Ruto's Letter — you need it for the story!</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/1XcEd4n7wN0" title="Jabu-Jabu's Belly Walkthrough — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Jabu-Jabu's Belly Walkthrough</b> by Gamer Guru (~25 min, remake) — shows Ruto and the Boomerang. <a href="https://www.youtube.com/watch?v=1XcEd4n7wN0" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(17629, 'Inside Jabu-Jabu&rsquo;s Belly')">▶ Watch this part — 4:53:49</button>
   </div>
 
   <div class="card" id="temple-time">
@@ -387,10 +386,7 @@
     • Taught your Scarecrow's Song to the scarecrow at Lake Hylia (you need it as a grown-up!).<br>
     • Got Epona's Song from Malon at Lon Lon Ranch.<br>
     • Grabbed the kid Heart Pieces and Skulltulas in each place — the green boxes in this guide tell you which ones!</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/h_WPRK23fE0" title="Pulling the Master Sword — Ocarina of Time Remake Cutscene" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>The New Master Sword Cutscene</b> by Hoxi (~4 min, remake) — the big moment, brand new in the remake! <a href="https://www.youtube.com/watch?v=h_WPRK23fE0" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(19371, 'Ocarina of Time and Master Sword')">▶ Watch this part — 5:22:51</button>
   </div>
 
   <div class="card" id="hookshot">
@@ -405,6 +401,7 @@
     </ol>
     <div class="kidtip"><b>KID TIP!</b> The Hookshot pulls you to anything wooden or stony. Aim at a far wall, a wooden post, or a scarecrow — and ZOOM, you fly to it!</div>
     <div class="getbox"><b>YOU GET:</b> Hookshot, Heart Piece #14 (if you win the race)</div>
+    <button class="watch-btn" onclick="openVideo(24344, 'Epona and Hookshot')">▶ Watch this part — 6:45:44</button>
   </div>
 
   <div class="card" id="epona">
@@ -419,6 +416,7 @@
     </ol>
     <div class="kidtip"><b>KID TIP!</b> With Epona you can jump the fence, win Horseback Archery (Heart Piece #35!), and chase the Big Poes at night (Bottle #5). She is the best!</div>
     <div class="getbox"><b>YOU GET:</b> Epona the horse, Epona's Song</div>
+    <button class="watch-btn" onclick="openVideo(24344, 'Epona and Hookshot')">▶ Watch this part — 6:45:44</button>
   </div>
 
   <!-- ================= ADULT LINK ================= -->
@@ -440,10 +438,7 @@
     <div class="kidtip"><b>KID TIP!</b> The Poe sisters are Meg, Joelle, Beth, and Amy. Each one hides in a different part of the temple. If you lose track, check your Threads of Time!</div>
     <div class="here"><b>WHILE YOU'RE HERE! ⭐</b><br>
     • <b>Skulltulas:</b> 5 in the Forest Temple. Grab them as you go — the ones behind the twisted halls are easy to miss!</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/MtsXJhwJBl4" title="Forest Temple Walkthrough — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Forest Temple Walkthrough</b> by Austin John Plays (~25 min, remake, with talking) — great if the twisty halls confuse you. <a href="https://www.youtube.com/watch?v=MtsXJhwJBl4" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(26423, 'Forest Temple')">▶ Watch this part — 7:20:23</button>
   </div>
 
   <div class="card" id="fire">
@@ -465,10 +460,7 @@
     <div class="here"><b>WHILE YOU'RE HERE! ⭐</b><br>
     • <b>Skulltulas:</b> 5 in the Fire Temple. Check every room — some hide behind the fire walls!<br>
     • <b>Grown-up Heart Pieces:</b> Ride the bean plants you planted as a kid — #17 on Death Mountain Trail and #21 in the crater.</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/XAzGJvRjfdE" title="Fire Temple Walkthrough — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Fire Temple Walkthrough</b> by Sirloin (~65 min, remake, no talking). <a href="https://www.youtube.com/watch?v=XAzGJvRjfdE" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(32597, 'Fire Temple')">▶ Watch this part — 9:03:17</button>
   </div>
 
   <div class="card" id="ice-cavern">
@@ -483,6 +475,7 @@
     </ol>
     <div class="kidtip"><b>KID TIP!</b> Blue Fire goes out fast! Carry it in a bottle and use it right away. And the Ice Cavern has 3 Gold Skulltulas — grab them while you are here!</div>
     <div class="getbox"><b>YOU GET:</b> Iron Boots, Zora Tunic, Serenade of Water</div>
+    <button class="watch-btn" onclick="openVideo(38283, 'Ice Cavern')">▶ Watch this part — 10:38:03</button>
   </div>
 
   <div class="card" id="water">
@@ -504,10 +497,7 @@
     <div class="here"><b>WHILE YOU'RE HERE! ⭐</b><br>
     • <b>Skulltulas:</b> 5 in the Water Temple. Check the rooms at every water level!<br>
     • <b>Grown-up Heart Pieces:</b> #27 and #28 at Zora's Fountain (iceberg + underwater cave), #30 and #31 at Lake Hylia (lab diving with the Golden Scale + the bean tower).</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/L2N5vpIOP7Q" title="Water Temple Walkthrough — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Water Temple Walkthrough</b> by Gamer Guru (~30 min, remake) — every puzzle and all 5 Skulltulas. Stuck? Watch this one! <a href="https://www.youtube.com/watch?v=L2N5vpIOP7Q" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(41222, 'Water Temple')">▶ Watch this part — 11:27:02</button>
   </div>
 
   <div class="card" id="well">
@@ -523,6 +513,7 @@
     </ol>
     <div class="kidtip"><b>KID TIP!</b> The Well has 3 Gold Skulltulas as a kid — grab them while you are here! Two of them can only be seen through the Lens of Truth.</div>
     <div class="getbox"><b>YOU GET:</b> Lens of Truth, Song of Storms</div>
+    <button class="watch-btn" onclick="openVideo(45135, 'Bottom of the Well')">▶ Watch this part — 12:32:15</button>
   </div>
 
   <div class="card" id="shadow">
@@ -544,10 +535,7 @@
     <div class="here"><b>WHILE YOU'RE HERE! ⭐</b><br>
     • <b>Skulltulas:</b> 5 in the Shadow Temple. Use the Lens of Truth to spot the hidden ones!<br>
     • <b>Grown-up Heart Pieces:</b> #9 (windmill, through Dampé's tunnel) and #14 (Dampé's race — Hookshot needed) in Kakariko, plus #13 (ride the graveyard bean plant you planted as a kid).</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/SHaE04RxPRs" title="Shadow Temple Walkthrough — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Shadow Temple Walkthrough</b> by Gamer Guru (~35 min, remake) — every puzzle and all 5 Skulltulas. <a href="https://www.youtube.com/watch?v=SHaE04RxPRs" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(48176, 'Shadow Temple')">▶ Watch this part — 13:22:56</button>
   </div>
 
   <div class="card" id="spirit">
@@ -571,10 +559,7 @@
     • <b>Plant a Magic Bean at the Desert Colossus as a kid</b> for Heart Piece #36 (shoot it off the arch with your Bow as a grown-up).<br>
     • <b>Heart Pieces #34 and #35</b> are in Gerudo's Fortress (Scarecrow chest + Horseback Archery) — do them as a grown-up before the Spirit Temple.<br>
     • <b>Skulltulas:</b> 4 in Gerudo Valley, 2 in the Fortress, 3 at the Desert Colossus.</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/oqik6-xcaMA" title="Spirit Temple Walkthrough — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Spirit Temple Walkthrough</b> by Austin John Plays (~30 min, remake, with talking) — clear and easy to follow. <a href="https://www.youtube.com/watch?v=oqik6-xcaMA" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(53697, 'Spirit Temple')">▶ Watch this part — 14:54:57</button>
   </div>
 
   <div class="card" id="ganon">
@@ -589,17 +574,14 @@
     </ol>
     <div class="boss"><b>BOSS: GANONDORF</b><br>He shoots big magic balls at you! Hit the ball back at him with your sword (like tennis) or catch it in an empty bottle and throw it back. When he is stunned, hit him with your sword or shoot him with a Light Arrow. Do it until he falls, then hit him with all you have!</div>
     <p>After Ganondorf falls, the castle starts to fall down! Run out fast — follow Zelda and do not stop!</p>
-    <div class="boss"><b>FINAL BOSS: GANON</b><br>Outside, Ganondorf turns into a giant pig beast named Ganon! He is big and strong. Hit his tail with the Master Sword (or the Biggoron's Sword if you have it). When Zelda holds him still with her light, run up and give him the final hit with the Master Sword!</div>
+    <div class="boss"><b>FINAL BOSS: GANON</b><br>Outside, Ganondorf turns into a giant pig beast named Ganon! He is big and strong. Hit his tail with the Master Sword (or the Biggoron's Sword if you have it). When Zelda holds him still with her light, run up and give him the final hit with the Master Sword!<br><a href="#" onclick="openVideo(63189, 'Final Boss: Ganondorf and Ganon'); return false;">▶ Skip straight to the final boss fight (17:33:09)</a></div>
     <div class="getbox"><b>YOU WIN!</b> You saved Hyrule! Watch the happy ending. You are a true hero, Link!</div>
     <div class="kidtip"><b>KID TIP!</b> Before the final fight, stock up! Fill your bottles with fairies (catch them in bottles at fairy fountains). If you fall in a fight, a fairy will bring you back to life. Fairies are the best!</div>
     <div class="here"><b>LAST CHANCE! ⭐</b><br>
     • <b>Skulltula:</b> 1 in Ganon's Castle — the very last one!<br>
     • <b>Golden Gauntlets + Double Defense:</b> Get the Great Fairy of Courage gift outside the castle before you go in.<br>
     • <b>Check the tables page</b> (<a href="hearts-skulls.html">Hearts &amp; Skulltulas</a>) for any Heart Pieces or Skulltulas you still miss — grown-up ones #9, #13, #14, #17, #21, #27, #28, #30, #31, #34, #35, #36 are the ones most people forget!</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/1A8_3M184Zw" title="Final Boss and Ending — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Final Boss &amp; 100% Ending!</b> by AbdallahSmash (remake) — Ganondorf, Ganon, the ending and the credits. <a href="https://www.youtube.com/watch?v=1A8_3M184Zw" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(60925, 'Inside Ganon&rsquo;s Castle')">▶ Watch this part — 16:55:25</button>
   </div>
 
   <!-- ================= 100% ================= -->
@@ -749,10 +731,7 @@
       <li>Wait 3 game days (play the Sun's Song to make time pass). Show Biggoron the Claim Check. He gives you the <b>BIGGORON'S SWORD</b>!</li>
     </ol>
     <div class="kidtip"><b>KID TIP!</b> The Odd Mushroom step is timed — 3 minutes! Do not stop to fight or shop. Run straight from the Lost Woods to Kakariko. You can do it!</div>
-    <div class="video">
-      <div class="vid-wrap"><iframe src="https://www.youtube-nocookie.com/embed/TOsLhEJJRuc" title="How to Get the Biggoron's Sword — Ocarina of Time Remake" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
-      <p class="cap">📺 Watch: <b>Get This BROKEN Biggoron's Sword</b> by PhillyBeatzU (~17 min, remake) — the whole trading trip, including the timed deliveries. <a href="https://www.youtube.com/watch?v=TOsLhEJJRuc" target="_blank" rel="noopener">Watch on YouTube</a></p>
-    </div>
+    <button class="watch-btn" onclick="openVideo(35737, 'Biggoron&rsquo;s Sword')">▶ Watch this part — 9:55:37</button>
   </div>
 
   <div class="card" id="masks">
@@ -803,6 +782,14 @@
 
 </div>
 
+<div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Video player">
+  <div class="modal-box">
+    <div class="modal-head"><span id="modalTitle">Watch the walkthrough</span><button class="close-btn" id="modalClose" aria-label="Close video">✕</button></div>
+    <div class="vid-wrap"><iframe id="videoFrame" src="" title="Ocarina of Time Remake walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+    <p class="modal-note">From the full 100% walkthrough by RetroArchive (about 18 hours, no talking). <a id="modalWatchLink" href="https://www.youtube.com/watch?v=NLIqrxADdII" target="_blank" rel="noopener">Open on YouTube</a></p>
+  </div>
+</div>
+
 <script>
   // Slide-out nav
   var drawer = document.getElementById('drawer');
@@ -835,6 +822,28 @@
     });
   });
   updateProgress();
+
+  // Video popup: one walkthrough video, jumped to the right time
+  var VIDEO_ID = 'NLIqrxADdII';
+  var videoModal = document.getElementById('videoModal');
+  var videoFrame = document.getElementById('videoFrame');
+  var modalTitle = document.getElementById('modalTitle');
+  var modalWatchLink = document.getElementById('modalWatchLink');
+  function openVideo(seconds, title) {
+    modalTitle.textContent = title;
+    videoFrame.src = 'https://www.youtube-nocookie.com/embed/' + VIDEO_ID + '?start=' + seconds + '&autoplay=1';
+    modalWatchLink.href = 'https://www.youtube.com/watch?v=' + VIDEO_ID + '&t=' + seconds + 's';
+    videoModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeVideo() {
+    videoFrame.src = '';
+    videoModal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('modalClose').addEventListener('click', closeVideo);
+  videoModal.addEventListener('click', function(e){ if (e.target === videoModal) closeVideo(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') closeVideo(); });
 </script>
 </body>
 </html>
